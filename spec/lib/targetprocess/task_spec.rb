@@ -42,4 +42,12 @@ describe Targetprocess::Task do
     expect(task.numeric_priority_changed?).to be_true
   end
 
+  it 'should raise NoMethodError when trying to set invalid attribute' do
+    task = Targetprocess::Task.new
+
+    expect {
+      task.fuck_my_brain = "lol"
+    }.to raise_error(NoMethodError)
+  end
+
 end
