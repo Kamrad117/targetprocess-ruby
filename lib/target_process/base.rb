@@ -11,7 +11,7 @@ module  TargetProcess
     attr_reader :attributes, :changed_attributes
 
     module InstanceMethods
-      def initialize(hash={})
+      def initialize(hash = {})
         @changed_attributes = hash
         @attributes = {}
       end
@@ -19,7 +19,7 @@ module  TargetProcess
       def delete
         path = entity_path
         resp = TargetProcess.client.delete(path)
-        true if resp.code == "200"
+        true if resp.code == '200'
       end
 
       def save
@@ -31,10 +31,10 @@ module  TargetProcess
         self
       end
 
-      def ==(obj)
-        if self.class == obj.class && self.all_attrs-obj.all_attrs==[]
-          (self.all_attrs|obj.all_attrs).all? do |key|
-            self.send(key) == obj.send(key)
+      def ==(other)
+        if self.class == other.class && all_attrs - other.all_attrs == []
+          (all_attrs | other.all_attrs).all? do |key|
+            send(key) == other.send(key)
           end
         else
           false
@@ -42,9 +42,9 @@ module  TargetProcess
       end
 
       def method_missing(name, *args)
-        if self.respond_to?(name)
+        if respond_to?(name)
           if name.to_s.match(/=\z/)
-            key = name.to_s.delete("=").to_sym
+            key = name.to_s.delete('=').to_sym
             if @attributes[key] == args.first
               @changed_attributes.delete(key)
             else
@@ -63,7 +63,7 @@ module  TargetProcess
       end
 
       def respond_to_missing?(name, include_private = false)
-        if name.to_s.match(/\A[a-z_]+\z/) && self.all_attrs.include?(name)
+        if name.to_s.match(/\A[a-z_]+\z/) && all_attrs.include?(name)
           true
         elsif name.to_s.match(/\A[a-z_]+=\z/) && name != :id=
           true
@@ -82,33 +82,33 @@ module  TargetProcess
     end
 
     module ClassMethods
-      def where(params_str, options={})
+      def where(params_str, options = {})
         options.merge!(where: params_str)
-        self.all(options)
+        all(options)
       end
 
-      def all(options={})
+      def all(options = {})
         path = collection_path
         TargetProcess.client.get(path, options)[:items].collect! do |hash|
-          result = self.new
+          result = new
           result.attributes.merge!(hash)
           result || []
         end
       end
 
-      def find(id, options={})
-        path = collection_path + "#{id}"
-        result = self.new
+      def find(id, options = {})
+        path = collection_path + id.to_s
+        result = new
         result.attributes.merge!(TargetProcess.client.get(path, options))
         result
       end
 
       def collection_path
-        self.to_s.demodulize.pluralize + "/"
+        to_s.demodulize.pluralize + '/'
       end
 
       def meta
-        TargetProcess.client.get(collection_path + "/meta")
+        TargetProcess.client.get(collection_path + '/meta')
       end
     end
   end

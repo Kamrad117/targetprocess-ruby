@@ -5,16 +5,17 @@ require 'json'
 module TargetProcess
   class APIClient
 
-    def get(path, options={})
+    def get(path, options = {})
       options.merge!(format: 'json')
-      options = {body: options}
+      options = { body: options }
       response = perform(:get, path, options)
       normalize_response(response.parsed_response)
     end
 
     def post(path, attr_hash)
       content = prepare_data(attr_hash).to_json
-      options = {body: content, headers: {'Content-Type' => 'application/json'}}
+      options = { body: content,
+                  headers: { 'Content-Type' => 'application/json' } }
       response = perform(:post, path, options)
       normalize_response(response.parsed_response)
     end
@@ -25,7 +26,7 @@ module TargetProcess
 
     private
 
-    def perform(type, path, options={})
+    def perform(type, path, options = {})
       auth = { username: TargetProcess.configuration.username,
                password: TargetProcess.configuration.password }
       options.merge!(basic_auth: auth)
@@ -41,36 +42,36 @@ module TargetProcess
     end
 
     def generate_url(path)
-      if TargetProcess.configuration.api_url[-1] == "/"
+      if TargetProcess.configuration.api_url[-1] == '/'
         TargetProcess.configuration.api_url + path
       else
-        TargetProcess.configuration.api_url + "/" + path
+        TargetProcess.configuration.api_url + '/' + path
       end
     end
 
     def normalize_response(hash)
-      hash = Hash[hash.map {|k, v| [k.underscore.to_sym, v] }]
-      hash.each do |k,v|
+      hash = Hash[hash.map { |k, v| [k.underscore.to_sym, v] }]
+      hash.each do |k, v|
         hash[k] = case v
-        when Hash
-          normalize_response(v)
-        when Array
-          v.collect! { |el| normalize_response(el) }
-        when /Date\((\d+)-(\d+)\)/
-          ::Time.at($1.to_i/1000)
-        else
-          v
+                  when Hash
+                    normalize_response(v)
+                  when Array
+                    v.collect! { |el| normalize_response(el) }
+                  when /Date\((\d+)-(\d+)\)/
+                    ::Time.at($1.to_i / 1000)
+                  else
+                    v
         end
       end
     end
 
     def json_date(time)
-      "\/Date(#{time.to_i}000+0#{time.utc_offset/3600}00)\/"
+      "\/Date(#{time.to_i}000+0#{time.utc_offset / 3600}00)\/"
     end
 
     def prepare_data(hash)
-      hash = Hash[hash.map {|k, v| [k.to_s.camelize.to_sym, v] }]
-      hash.each { |k,v| hash[k] = json_date(v) if v.is_a?(::Time) }
+      hash = Hash[hash.map { |k, v| [k.to_s.camelize.to_sym, v] }]
+      hash.each { |k, v| hash[k] = json_date(v) if v.is_a?(::Time) }
     end
   end
 end

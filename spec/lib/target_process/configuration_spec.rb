@@ -17,14 +17,13 @@ describe TargetProcess do
     end
   end
 
-  describe "#configuration" do
+  describe '#configuration' do
     it 'raises configuration error if not configured' do
       TargetProcess.instance_variable_set(:"@configuration", nil)
-      expect {
+      expect do
         TargetProcess.configuration
-      }.to raise_error(TargetProcess::ConfigurationError)
+      end.to raise_error(TargetProcess::ConfigurationError)
     end
-
 
     it 'raises configuration error without username' do
       TargetProcess.configure do |c|
@@ -32,11 +31,11 @@ describe TargetProcess do
         c.username = nil
         c.password = 'secret'
       end
-      msg = "There is no username for configuration"
+      msg = 'There is no username for configuration'
 
-      expect {
+      expect do
         TargetProcess.configuration.username
-      }.to raise_error(TargetProcess::ConfigurationError, msg)
+      end.to raise_error(TargetProcess::ConfigurationError, msg)
     end
 
     it 'raises configuration error without password' do
@@ -45,11 +44,11 @@ describe TargetProcess do
         c.username = 'admin'
         c.password = nil
       end
-      msg = "There is no password for configuration"
+      msg = 'There is no password for configuration'
 
-      expect {
+      expect do
         TargetProcess.configuration.password
-      }.to raise_error(TargetProcess::ConfigurationError, msg)
+      end.to raise_error(TargetProcess::ConfigurationError, msg)
     end
 
     it 'raises configuration error without api_url' do
@@ -58,16 +57,16 @@ describe TargetProcess do
         c.username = 'admin'
         c.password = 'secret'
       end
-      msg = "There is no api_url for configuration"
+      msg = 'There is no api_url for configuration'
 
-      expect {
+      expect do
         TargetProcess.configuration.api_url
-      }.to raise_error(TargetProcess::ConfigurationError, msg)
+      end.to raise_error(TargetProcess::ConfigurationError, msg)
     end
   end
 
-  describe "#client" do
-    it "returns APIClient instance" do
+  describe '#client' do
+    it 'returns APIClient instance' do
       endpoint = TargetProcess.client
 
       expect(endpoint).to be_an_instance_of(TargetProcess::APIClient)

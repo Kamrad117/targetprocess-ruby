@@ -10,17 +10,16 @@ module TargetProcess
 
     def self.parse(response)
       error = response['Error']
-      status = error['Status'] || response['Status'] || "Undefined"
+      status = error['Status'] || response['Status'] || 'Undefined'
       message = raw_message(response.parsed_response)
-      self.constants.include?(status.to_sym) ?
-      "#{self}::#{status}".safe_constantize.new(message) :
-      self.new(message)
+      type = "#{self}::#{status}".safe_constantize
+      constants.include?(status.to_sym) ? type.new(message) : new(message)
     end
 
     def self.raw_message(response)
       case response
       when Hash
-        response["Error"]["Message"]
+        response['Error']['Message']
       when String
         response.match(/<title>(.+)<\/title>/)[1]
       end
