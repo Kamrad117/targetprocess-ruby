@@ -309,4 +309,25 @@ describe TargetProcess::Base, vcr: true do
       expect(subject.new.respond_to?(:underscored_method?)).to be_false
     end
   end
+
+  describe 'associations' do
+    it 'returns associated project' do
+      us = TargetProcess::UserStory.find(4522)
+
+      expect(us.project).to be_an_instance_of(TargetProcess::Project)
+    end
+
+    it 'returns an array of tasks and resolve associations' do
+      us = TargetProcess::UserStory.find(4522)
+      tasks = us.tasks
+
+      expect(tasks).to be_an_instance_of(Array)
+      us.tasks.each do |task|
+        expect(task).to be_an_instance_of(TargetProcess::Task)
+        expect(task.references[:user_story]).to eq(us)
+      end
+      expect(us.collections[:tasks]).to eq(tasks)
+    end
+  end
+
 end

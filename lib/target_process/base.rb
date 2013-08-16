@@ -8,12 +8,14 @@ module  TargetProcess
       base.extend(ClassMethods)
     end
 
-    attr_reader :attributes, :changed_attributes
+    attr_reader :attributes, :changed_attributes, :references, :collections
 
     module InstanceMethods
       def initialize(hash = {})
         @changed_attributes = hash
         @attributes = {}
+        @references = {}
+        @collections = {}
       end
 
       def delete
@@ -51,7 +53,7 @@ module  TargetProcess
               @changed_attributes[key] = args.first
             end
           else
-            if @changed_attributes.has_key?(name)
+            if @changed_attributes.has_key?(name) && all_attrs.include?(name)
               @changed_attributes[name]
             else
               @attributes[name]
@@ -109,6 +111,35 @@ module  TargetProcess
 
       def meta
         TargetProcess.client.get(collection_path + '/meta')
+      end
+
+      def has_many(*collections)
+        collections.each do |name|
+          define_method(name) do
+            path = entity_path + '/' + name.to_s.camelize
+            klass = "TargetProcess::#{name.to_s.singularize.camelize}".constantize
+            @collections[name] ||=
+            TargetProcess.client.get(path)[:items].collect! do |hash|
+              result = klass.new
+              result.attributes.merge!(hash)
+              result.references.merge!(self.class.to_s.demodulize.underscore.to_sym => self)
+              result
+            end
+          end
+        end
+      end
+
+      def belongs_to (*references)
+        references.each do |name|
+          define_method(name) do
+            id = @attributes[name][:id]
+            klass = "TargetProcess::#{name.to_s.camelize}".constantize
+            self_klass = self.class.to_s.demodulize.pluralize.underscore.to_sym
+            @references[name] ||= klass.find(id)
+            @references[name].collections.merge!(self_klass => self)
+            @references[name]
+          end
+        end
       end
     end
   end

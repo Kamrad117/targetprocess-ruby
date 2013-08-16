@@ -3,6 +3,7 @@ require 'target_process/configuration'
 require 'target_process/api_error'
 require 'target_process/api_client'
 require 'target_process/base'
+require 'target_process/user_story'
 
 module TargetProcess
   class ConfigurationError < StandardError; end
@@ -26,7 +27,7 @@ module TargetProcess
     TargetProcess.client.get('context/', options)
   end
 
-  ENTITIES = %w(Task UserStory Feature Bug User Project
+  ENTITIES = %w(Feature Bug User Project
                 Release Iteration Request TestCase Impediment
                 Comment Process Priority Severity EntityState
                 Program Testplan TestPlanRun TestCaseRun Time
