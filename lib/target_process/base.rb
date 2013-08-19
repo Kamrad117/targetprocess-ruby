@@ -53,7 +53,7 @@ module  TargetProcess
               @changed_attributes[key] = args.first
             end
           else
-            if @changed_attributes.has_key?(name) && all_attrs.include?(name)
+            if @changed_attributes.has_key?(name)
               @changed_attributes[name]
             else
               @attributes[name]
@@ -75,7 +75,7 @@ module  TargetProcess
       end
 
       def entity_path
-        self.class.collection_path + @attributes[:id].to_s
+        self.class.collection_path + @attributes[:id].to_s + '/'
       end
 
       def all_attrs
@@ -113,34 +113,37 @@ module  TargetProcess
         TargetProcess.client.get(collection_path + '/meta')
       end
 
-      def has_many(*collections)
-        collections.each do |name|
-          define_method(name) do
-            path = entity_path + '/' + name.to_s.camelize
-            klass = "TargetProcess::#{name.to_s.singularize.camelize}".constantize
-            @collections[name] ||=
-            TargetProcess.client.get(path)[:items].collect! do |hash|
-              result = klass.new
-              result.attributes.merge!(hash)
-              result.references.merge!(self.class.to_s.demodulize.underscore.to_sym => self)
-              result
-            end
+      def has_many(name, klass = nil)
+        klass ||= name.to_s.singularize.camelize
+        klass = ("TargetProcess::" + klass).constantize
+        define_method(name) do
+          path = entity_path + name.to_s.camelize
+          @collections[name] ||=
+          TargetProcess.client.get(path)[:items].collect! do |hash|
+            result = klass.new
+            result.attributes.merge!(hash)
+            result.references.merge!(self.class.to_s.demodulize.underscore.to_sym => self)
+            result || []
           end
         end
       end
 
-      def belongs_to (*references)
-        references.each do |name|
-          define_method(name) do
+      def belongs_to (name, klass = nil)
+        klass ||= name.to_s.camelize
+        klass = ("TargetProcess::" + klass).constantize
+        define_method(name) do
+          if @attributes[name]
             id = @attributes[name][:id]
-            klass = "TargetProcess::#{name.to_s.camelize}".constantize
             self_klass = self.class.to_s.demodulize.pluralize.underscore.to_sym
             @references[name] ||= klass.find(id)
-            @references[name].collections.merge!(self_klass => self)
+            @references[name].collections.merge!(self_klass => [self])
             @references[name]
+          else
+            nil
           end
         end
       end
+
     end
   end
 end

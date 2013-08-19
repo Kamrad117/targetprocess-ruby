@@ -15,7 +15,6 @@ lib/bundler/man
 pkg
 rdoc
 spec/reports
-spec/fixtures/vcr_cassettes
 test/tmp
 test/version_tmp
 tmp

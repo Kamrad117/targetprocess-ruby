@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/context/
+    body:
+      encoding: UTF-8
+      string: format=json
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Thu, 15 Aug 2013 13:56:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '8606'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '54'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Acid\": \"DB2C55A27AE7CDD5A536A85E6C5A7FBB\",\r\n  \"Edition\":
+        \"Pro\",\r\n  \"Version\": \"2.24.6.24152\",\r\n  \"AppContext\": {\r\n    \"ProjectContext\":
+        {\r\n      \"No\": true\r\n    },\r\n    \"TeamContext\": {\r\n      \"No\":
+        true\r\n    }\r\n  },\r\n  \"Culture\": {\r\n    \"Name\": \"en-US\",\r\n
+        \   \"TimePattern\": \"g:i A\",\r\n    \"ShortDateFormat\": \"M/d/yyyy\",\r\n
+        \   \"LongDateFormat\": \"dddd, MMMM dd, yyyy\",\r\n    \"DecimalSeparator\":
+        \".\"\r\n  },\r\n  \"LoggedUser\": {\r\n    \"Kind\": \"User\",\r\n    \"Id\":
+        1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\": \"Administrator\",\r\n
+        \   \"Email\": \"Dzmitry_Bradnitski@gmail.com\",\r\n    \"IsActive\": true,\r\n
+        \   \"IsAdministrator\": true\r\n  },\r\n  \"Processes\": {\r\n    \"Items\":
+        [\r\n      {\r\n        \"Id\": 3,\r\n        \"Name\": \"Scrum\",\r\n        \"IsDefault\":
+        true,\r\n        \"Terms\": {\r\n          \"Items\": [\r\n            {\r\n
+        \             \"Name\": \"Iteration\",\r\n              \"Value\": \"Sprint\"\r\n
+        \           },\r\n            {\r\n              \"Name\": \"Iterations\",\r\n
+        \             \"Value\": \"Sprints\"\r\n            },\r\n            {\r\n
+        \             \"Name\": \"Iteration Big Icon Text\",\r\n              \"Value\":
+        \"Sprint\"\r\n            },\r\n            {\r\n              \"Name\": \"Iteration
+        Small Icon Text\",\r\n              \"Value\": \"S\"\r\n            }\r\n
+        \         ]\r\n        },\r\n        \"Practices\": {\r\n          \"Items\":
+        [\r\n            {\r\n              \"Name\": \"Planning\",\r\n              \"Description\":
+        \"General Project planning. Supports iterative development, user stories and
+        tasks hierarchy\",\r\n              \"EffortPoints\": \"Hour\",\r\n              \"IsStoryEffortEqualsSumTasksEffort\":
+        false\r\n            },\r\n            {\r\n              \"Name\": \"Time
+        Tracking\",\r\n              \"Description\": \"Controls spent and remaining
+        time for each assignable, iteration, release. Provides better project traceability
+        and stats close to reality\",\r\n              \"IsCloseAssignableIfZeroTimeRemaining\":
+        false,\r\n              \"IsTimeDescriptionFieldVisible\": true,\r\n              \"IsTimeDescriptionRequired\":
+        true,\r\n              \"IsRequiredShowRoleDropDown\": false\r\n            },\r\n
+        \           {\r\n              \"Name\": \"Bug Tracking\",\r\n              \"Description\":
+        \"Simple Bug Tracking. Bugs list, bugs workflow and assignments\"\r\n            },\r\n
+        \           {\r\n              \"Name\": \"Requirements\",\r\n              \"Description\":
+        \"High level requirements management. Supports Features and Release Planning\"\r\n
+        \           },\r\n            {\r\n              \"Name\": \"Test Cases\",\r\n
+        \             \"Description\": \"Test cases and test plans management.\"\r\n
+        \           },\r\n            {\r\n              \"Name\": \"Source Control\",\r\n
+        \             \"Description\": \"Integration with Source Control.\"\r\n            },\r\n
+        \           {\r\n              \"Name\": \"Help Desk\",\r\n              \"Description\":
+        \"Integrated Help Desk.\"\r\n            },\r\n            {\r\n              \"Name\":
+        \"Iterations\",\r\n              \"Description\": \"Supports Iterations-oriented
+        development practice.\"\r\n            }\r\n          ]\r\n        },\r\n
+        \       \"CustomFields\": {\r\n          \"Items\": []\r\n        }\r\n      }\r\n
+        \   ]\r\n  },\r\n  \"SelectedProjects\": {\r\n    \"Items\": [\r\n      {\r\n
+        \       \"Id\": 3421,\r\n        \"Name\": \"Bar_Foo\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 4396,\r\n
+        \       \"Name\": \"foo bar\",\r\n        \"Process\": {\r\n          \"Id\":
+        3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 2275,\r\n        \"Name\":
+        \"Foo123bar\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n          \"Name\":
+        \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n      },\r\n      {\r\n
+        \       \"Id\": 2276,\r\n        \"Name\": \"Foo321bar\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 2274,\r\n
+        \       \"Name\": \"Foobar\",\r\n        \"Process\": {\r\n          \"Id\":
+        3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 2496,\r\n        \"Name\":
+        \"Foobar1\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n          \"Name\":
+        \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n      },\r\n      {\r\n
+        \       \"Id\": 2014,\r\n        \"Name\": \"foobar3318392\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 2030,\r\n
+        \       \"Name\": \"Project_new_name2499868962\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 4536,\r\n
+        \       \"Name\": \"Project_new_name3031244325\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 2022,\r\n
+        \       \"Name\": \"Project_new_name6757305669\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 2026,\r\n
+        \       \"Name\": \"Project1306696328\",\r\n        \"Process\": {\r\n          \"Id\":
+        3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 2023,\r\n        \"Name\":
+        \"Project1694405550\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n
+        \         \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n
+        \     },\r\n      {\r\n        \"Id\": 4535,\r\n        \"Name\": \"Project1736096232\",\r\n
+        \       \"Process\": {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n
+        \       },\r\n        \"Program\": null\r\n      },\r\n      {\r\n        \"Id\":
+        2015,\r\n        \"Name\": \"Project2135869770\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 2032,\r\n
+        \       \"Name\": \"Project2168633823\",\r\n        \"Process\": {\r\n          \"Id\":
+        3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 4531,\r\n        \"Name\":
+        \"Project2498866686\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n
+        \         \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n
+        \     },\r\n      {\r\n        \"Id\": 2031,\r\n        \"Name\": \"Project321906060\",\r\n
+        \       \"Process\": {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n
+        \       },\r\n        \"Program\": null\r\n      },\r\n      {\r\n        \"Id\":
+        2019,\r\n        \"Name\": \"Project3375152595\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 2027,\r\n
+        \       \"Name\": \"Project384976238\",\r\n        \"Process\": {\r\n          \"Id\":
+        3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 2017,\r\n        \"Name\":
+        \"Project391746579\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n
+        \         \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n
+        \     },\r\n      {\r\n        \"Id\": 2020,\r\n        \"Name\": \"Project4201565256\",\r\n
+        \       \"Process\": {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n
+        \       },\r\n        \"Program\": null\r\n      },\r\n      {\r\n        \"Id\":
+        2011,\r\n        \"Name\": \"Project466748765\",\r\n        \"Process\": {\r\n
+        \         \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 2024,\r\n        \"Name\":
+        \"Project4809733732\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n
+        \         \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n
+        \     },\r\n      {\r\n        \"Id\": 4537,\r\n        \"Name\": \"Project5007063875\",\r\n
+        \       \"Process\": {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n
+        \       },\r\n        \"Program\": null\r\n      },\r\n      {\r\n        \"Id\":
+        2025,\r\n        \"Name\": \"Project5677221732\",\r\n        \"Process\":
+        {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n
+        \       \"Program\": null\r\n      },\r\n      {\r\n        \"Id\": 2013,\r\n
+        \       \"Name\": \"Project58250070\",\r\n        \"Process\": {\r\n          \"Id\":
+        3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 2012,\r\n        \"Name\":
+        \"Project5946354427\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n
+        \         \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n
+        \     },\r\n      {\r\n        \"Id\": 2029,\r\n        \"Name\": \"Project66411145\",\r\n
+        \       \"Process\": {\r\n          \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n
+        \       },\r\n        \"Program\": null\r\n      },\r\n      {\r\n        \"Id\":
+        2021,\r\n        \"Name\": \"Project855107760\",\r\n        \"Process\": {\r\n
+        \         \"Id\": 3,\r\n          \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\":
+        null\r\n      },\r\n      {\r\n        \"Id\": 2010,\r\n        \"Name\":
+        \"Project8872909665\",\r\n        \"Process\": {\r\n          \"Id\": 3,\r\n
+        \         \"Name\": \"Scrum\"\r\n        },\r\n        \"Program\": null\r\n
+        \     }\r\n    ]\r\n  },\r\n  \"SelectedTeams\": {\r\n    \"Items\": []\r\n
+        \ }\r\n}"
+    http_version: 
+  recorded_at: Thu, 15 Aug 2013 13:56:33 GMT
+recorded_with: VCR 2.5.0

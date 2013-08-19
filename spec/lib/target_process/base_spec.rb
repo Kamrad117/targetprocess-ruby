@@ -137,7 +137,9 @@ describe TargetProcess::Base, vcr: true do
       project = TargetProcess::Project.new(name: unique_name).save
 
       project.attributes.keys.each do |key|
-        expect(project.send(key)).to eq(project.attributes[key])
+        unless project.respond_to?(key)
+          expect(project.send(key)).to eq(project.attributes[key])
+        end
       end
       project.delete
     end
@@ -310,23 +312,41 @@ describe TargetProcess::Base, vcr: true do
     end
   end
 
-  describe 'associations' do
-    it 'returns associated project' do
-      us = TargetProcess::UserStory.find(4522)
+  describe '#belongs_to' do
+    context "when symbol passed" do
+      it 'returns associated project' do
+        us = TargetProcess::UserStory.find(4522)
 
-      expect(us.project).to be_an_instance_of(TargetProcess::Project)
+        expect(us.project).to be_an_instance_of(TargetProcess::Project)
+        expect(us.references[:project]).to eq(us.project)
+        expect(us.project.collections[:user_stories]).to eq([us])
+      end
+    end
+  end
+
+  describe 'has_many' do
+    context "when symbol passed" do
+      it 'returns an array of tasks and resolve associations' do
+        us = TargetProcess::UserStory.find(4522)
+        tasks = us.tasks
+
+        expect(tasks).to be_an_instance_of(Array)
+        us.tasks.each do |task|
+          expect(task).to be_an_instance_of(TargetProcess::Task)
+          expect(task.references[:user_story]).to eq(us)
+        end
+        expect(us.collections[:tasks]).to eq(tasks)
+      end
     end
 
-    it 'returns an array of tasks and resolve associations' do
-      us = TargetProcess::UserStory.find(4522)
-      tasks = us.tasks
+    context "when hash passed" do
+      it 'returns an array and resolve associations' do
+        us = TargetProcess::UserStory.find(4522)
+        au = us.assigned_user
 
-      expect(tasks).to be_an_instance_of(Array)
-      us.tasks.each do |task|
-        expect(task).to be_an_instance_of(TargetProcess::Task)
-        expect(task.references[:user_story]).to eq(us)
+        expect(au).to be_an_instance_of(Array)
+        expect(au.first).to be_an_instance_of(TargetProcess::GeneralUser)
       end
-      expect(us.collections[:tasks]).to eq(tasks)
     end
   end
 

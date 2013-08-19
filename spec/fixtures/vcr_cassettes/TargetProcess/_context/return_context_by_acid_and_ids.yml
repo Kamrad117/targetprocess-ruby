@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/context/
+    body:
+      encoding: UTF-8
+      string: acid=2D2F0BA211357509A03167EECB5F3456&ids[]=1705&ids[]=1706&format=json
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Thu, 15 Aug 2013 13:56:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '3124'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '30'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Acid\": \"C8CC8C1F6C593B3A9A33F8F3C376BDF2\",\r\n  \"Edition\":
+        \"Pro\",\r\n  \"Version\": \"2.24.6.24152\",\r\n  \"AppContext\": {\r\n    \"ProjectContext\":
+        {\r\n      \"No\": true\r\n    },\r\n    \"TeamContext\": {\r\n      \"No\":
+        true\r\n    }\r\n  },\r\n  \"Culture\": {\r\n    \"Name\": \"en-US\",\r\n
+        \   \"TimePattern\": \"g:i A\",\r\n    \"ShortDateFormat\": \"M/d/yyyy\",\r\n
+        \   \"LongDateFormat\": \"dddd, MMMM dd, yyyy\",\r\n    \"DecimalSeparator\":
+        \".\"\r\n  },\r\n  \"LoggedUser\": {\r\n    \"Kind\": \"User\",\r\n    \"Id\":
+        1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\": \"Administrator\",\r\n
+        \   \"Email\": \"Dzmitry_Bradnitski@gmail.com\",\r\n    \"IsActive\": true,\r\n
+        \   \"IsAdministrator\": true\r\n  },\r\n  \"Processes\": {\r\n    \"Items\":
+        [\r\n      {\r\n        \"Id\": 3,\r\n        \"Name\": \"Scrum\",\r\n        \"IsDefault\":
+        true,\r\n        \"Terms\": {\r\n          \"Items\": [\r\n            {\r\n
+        \             \"Name\": \"Iteration\",\r\n              \"Value\": \"Sprint\"\r\n
+        \           },\r\n            {\r\n              \"Name\": \"Iterations\",\r\n
+        \             \"Value\": \"Sprints\"\r\n            },\r\n            {\r\n
+        \             \"Name\": \"Iteration Big Icon Text\",\r\n              \"Value\":
+        \"Sprint\"\r\n            },\r\n            {\r\n              \"Name\": \"Iteration
+        Small Icon Text\",\r\n              \"Value\": \"S\"\r\n            }\r\n
+        \         ]\r\n        },\r\n        \"Practices\": {\r\n          \"Items\":
+        [\r\n            {\r\n              \"Name\": \"Planning\",\r\n              \"Description\":
+        \"General Project planning. Supports iterative development, user stories and
+        tasks hierarchy\",\r\n              \"EffortPoints\": \"Hour\",\r\n              \"IsStoryEffortEqualsSumTasksEffort\":
+        false\r\n            },\r\n            {\r\n              \"Name\": \"Time
+        Tracking\",\r\n              \"Description\": \"Controls spent and remaining
+        time for each assignable, iteration, release. Provides better project traceability
+        and stats close to reality\",\r\n              \"IsCloseAssignableIfZeroTimeRemaining\":
+        false,\r\n              \"IsTimeDescriptionFieldVisible\": true,\r\n              \"IsTimeDescriptionRequired\":
+        true,\r\n              \"IsRequiredShowRoleDropDown\": false\r\n            },\r\n
+        \           {\r\n              \"Name\": \"Bug Tracking\",\r\n              \"Description\":
+        \"Simple Bug Tracking. Bugs list, bugs workflow and assignments\"\r\n            },\r\n
+        \           {\r\n              \"Name\": \"Requirements\",\r\n              \"Description\":
+        \"High level requirements management. Supports Features and Release Planning\"\r\n
+        \           },\r\n            {\r\n              \"Name\": \"Test Cases\",\r\n
+        \             \"Description\": \"Test cases and test plans management.\"\r\n
+        \           },\r\n            {\r\n              \"Name\": \"Source Control\",\r\n
+        \             \"Description\": \"Integration with Source Control.\"\r\n            },\r\n
+        \           {\r\n              \"Name\": \"Help Desk\",\r\n              \"Description\":
+        \"Integrated Help Desk.\"\r\n            },\r\n            {\r\n              \"Name\":
+        \"Iterations\",\r\n              \"Description\": \"Supports Iterations-oriented
+        development practice.\"\r\n            }\r\n          ]\r\n        },\r\n
+        \       \"CustomFields\": {\r\n          \"Items\": []\r\n        }\r\n      }\r\n
+        \   ]\r\n  },\r\n  \"SelectedProjects\": {\r\n    \"Items\": []\r\n  },\r\n
+        \ \"SelectedTeams\": {\r\n    \"Items\": []\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Thu, 15 Aug 2013 13:56:36 GMT
+recorded_with: VCR 2.5.0

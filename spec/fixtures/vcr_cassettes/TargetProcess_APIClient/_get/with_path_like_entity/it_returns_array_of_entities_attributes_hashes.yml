@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/entitytypes
+    body:
+      encoding: UTF-8
+      string: orderby=id&take=2&skip=4&format=json
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Thu, 15 Aug 2013 13:55:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '446'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '6'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Prev\": \"http://tpruby.tpondemand.com/api/v1/EntityTypes/?orderBy=id&format=json&take=2&skip=2\",\r\n
+        \ \"Next\": \"http://tpruby.tpondemand.com/api/v1/EntityTypes/?orderBy=id&format=json&take=2&skip=6\",\r\n
+        \ \"Items\": [\r\n    {\r\n      \"Id\": 5,\r\n      \"Name\": \"Task\",\r\n
+        \     \"IsExtendable\": true,\r\n      \"IsSearchable\": true\r\n    },\r\n
+        \   {\r\n      \"Id\": 6,\r\n      \"Name\": \"User\",\r\n      \"IsExtendable\":
+        false,\r\n      \"IsSearchable\": false\r\n    }\r\n  ]\r\n}"
+    http_version: 
+  recorded_at: Thu, 15 Aug 2013 13:55:58 GMT
+recorded_with: VCR 2.5.0

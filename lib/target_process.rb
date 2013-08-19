@@ -3,7 +3,6 @@ require 'target_process/configuration'
 require 'target_process/api_error'
 require 'target_process/api_client'
 require 'target_process/base'
-require 'target_process/user_story'
 
 module TargetProcess
   class ConfigurationError < StandardError; end
@@ -27,21 +26,24 @@ module TargetProcess
     TargetProcess.client.get('context/', options)
   end
 
-  ENTITIES = %w(Feature Bug User Project
+  ENTITIES = %w(Task UserStory Feature Bug User Project
                 Release Iteration Request TestCase Impediment
                 Comment Process Priority Severity EntityState
-                Program Testplan TestPlanRun TestCaseRun Time
+                Program TestPlan TestPlanRun TestCaseRun Time
                 Assignment Role RoleEffort ProjectMember Build
                 Company CustomActivity Attachment EntityType
                 General Assignable GeneralUser RequestType Message
                 MessageUid Milestone Relation RelationType
                 Requester Revision RevisionFile Tag Team
-                TeamIteration TeamMember TeamProject)
+                TeamIteration TeamMember TeamProject TaskHistory
+                UserStoryHistory RequestHistory BugHistoryFeatureHistory
+                BugHistory FeatureHistory Practice ImpedimentHistory)
 
   init_code = ''
   ENTITIES.each do |name|
     init_code += "class #{name}; include Base; end \n"
   end
-
   module_eval init_code
+  Dir["./lib/target_process/entities/*.rb"].each {|file| require file }
+
 end

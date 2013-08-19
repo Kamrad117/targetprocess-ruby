@@ -1,0 +1,315 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects//meta
+    body:
+      encoding: UTF-8
+      string: format=json
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Mon, 19 Aug 2013 15:59:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '20107'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '14'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Name\": \"Project\",\r\n  \"CanCreate\": true,\r\n  \"CanUpdate\":
+        true,\r\n  \"CanDelete\": true,\r\n  \"IndexUri\": \"http://tpruby.tpondemand.com/api/v1/index/meta\",\r\n
+        \ \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Projects\",\r\n  \"Description\":
+        \"Core entity which contains Releases, Features, User Stories, Bugs, etc.\",\r\n
+        \ \"ResourceMetadataHierarchyDescription\": {\r\n    \"ResourceMetadataBaseResourceDescription\":
+        {\r\n      \"Items\": [\r\n        {\r\n          \"Name\": \"General\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Generals/meta\"\r\n
+        \       }\r\n      ]\r\n    },\r\n    \"ResourceMetadataDerivedResourceDescription\":
+        {\r\n      \"Items\": [\r\n        {}\r\n      ]\r\n    }\r\n  },\r\n  \"ResourceMetadataPropertiesDescription\":
+        {\r\n    \"ResourceMetadataPropertiesResourceValuesDescription\": {\r\n      \"Items\":
+        [\r\n        {\r\n          \"Name\": \"Id\",\r\n          \"CanSet\": true,\r\n
+        \         \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n          \"Type\":
+        \"Int32\",\r\n          \"IsTypeComplex\": false,\r\n          \"Description\":
+        \"Entity ID\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Int32/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"Name\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": true,\r\n          \"Type\": \"String\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Entity name or title\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/String/meta\",\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"Description\",\r\n
+        \         \"CanSet\": true,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"String\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Entity description\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/String/meta\",\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"StartDate\",\r\n
+        \         \"CanSet\": true,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"DateTime\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Start date for time-boxed entities
+        such as Iteration, Project, Release\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/DateTime/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"EndDate\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"DateTime\",\r\n
+        \         \"IsTypeComplex\": false,\r\n          \"Description\": \"End date
+        for time-boxed entities such as Iteration, Project, Release\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/DateTime/meta\",\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"CreateDate\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"DateTime\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Entity creation date\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/DateTime/meta\",\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"ModifyDate\",\r\n
+        \         \"CanSet\": true,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"DateTime\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Last time entity was modified\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/DateTime/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"LastCommentDate\",\r\n          \"CanSet\": true,\r\n          \"CanGet\":
+        true,\r\n          \"IsRequired\": false,\r\n          \"Type\": \"DateTime\",\r\n
+        \         \"IsTypeComplex\": false,\r\n          \"Description\": \"Last comment
+        date\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/DateTime/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"Tags\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"String\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Comma-separated list tags\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/String/meta\",\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"NumericPriority\",\r\n
+        \         \"CanSet\": true,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Double\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Calculated priority of entity\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Double/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"IsActive\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Boolean\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Defines whether project is active\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Boolean/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"IsProduct\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Boolean\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Defines whether project is a product\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Boolean/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"Abbreviation\",\r\n          \"CanSet\": true,\r\n          \"CanGet\":
+        true,\r\n          \"IsRequired\": false,\r\n          \"Type\": \"String\",\r\n
+        \         \"IsTypeComplex\": false,\r\n          \"Description\": \"Project
+        abbreviation\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/String/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"MailReplyAddress\",\r\n          \"CanSet\": true,\r\n          \"CanGet\":
+        true,\r\n          \"IsRequired\": false,\r\n          \"Type\": \"String\",\r\n
+        \         \"IsTypeComplex\": false,\r\n          \"Description\": \"Reply
+        mail address\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/String/meta\",\r\n
+        \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"Color\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"String\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"Color for project\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/String/meta\",\r\n          \"IsBoundToParent\":
+        true\r\n        }\r\n      ]\r\n    },\r\n    \"ResourceMetadataPropertiesResourceReferencesDescription\":
+        {\r\n      \"Items\": [\r\n        {\r\n          \"Name\": \"EntityType\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"EntityType\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Type of entity e.g. Bug, Feature, Task,
+        etc.\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/EntityTypes/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
+        \"Owner\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"GeneralUser\",\r\n
+        \         \"IsTypeComplex\": true,\r\n          \"Description\": \"Person
+        who owns entity\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/GeneralUsers/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
+        \"LastCommentedUser\",\r\n          \"CanSet\": false,\r\n          \"CanGet\":
+        true,\r\n          \"IsRequired\": false,\r\n          \"Type\": \"GeneralUser\",\r\n
+        \         \"IsTypeComplex\": true,\r\n          \"Description\": \"Last commented
+        user\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/GeneralUsers/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
+        \"Project\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Project\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Project where this entity is found\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Projects/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
+        \"Program\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Program\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Program associated with the project\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Programs/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
+        \"Process\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Process\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Process of the project\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/Processes/meta\",\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Company\",\r\n          \"CanSet\":
+        true,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Company\",\r\n          \"IsTypeComplex\": true,\r\n
+        \         \"Description\": \"Project company\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Companies/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        }\r\n      ]\r\n    },\r\n
+        \   \"ResourceMetadataPropertiesResourceCollectionsDescription\": {\r\n      \"Items\":
+        [\r\n        {\r\n          \"Name\": \"CustomFields\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"CustomFields\",\r\n          \"IsTypeComplex\": true,\r\n
+        \         \"Description\": \"Custom fields values\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/CustomFieldValues/meta\",\r\n          \"CanAdd\":
+        true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"Comments\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Comment\",\r\n          \"IsTypeComplex\": true,\r\n
+        \         \"Description\": \"Collection of comments for entity\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/Comments/meta\",\r\n          \"CanAdd\":
+        true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"Messages\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Message\",\r\n          \"IsTypeComplex\": true,\r\n
+        \         \"Description\": \"Collection of messages for entity\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/Messages/meta\",\r\n          \"CanAdd\":
+        false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"TagObjects\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Tag\",\r\n          \"IsTypeComplex\": true,\r\n
+        \         \"Description\": \"Collection of tags for entity\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/Tags/meta\",\r\n          \"CanAdd\":
+        true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"MasterRelations\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Relation\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of related Master entities\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Relations/meta\",\r\n
+        \         \"CanAdd\": true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"SlaveRelations\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Relation\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of related Slave entities\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Relations/meta\",\r\n
+        \         \"CanAdd\": true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"Attachments\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Attachment\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of attachments for entity\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Attachments/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"Generals\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"General\",\r\n          \"IsTypeComplex\": true,\r\n
+        \         \"Description\": \"Collection of general entities\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/Generals/meta\",\r\n          \"CanAdd\":
+        false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Features\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Feature\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project features\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Features/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Releases\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Release\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project releases\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Releases/meta\",\r\n
+        \         \"CanAdd\": true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"Iterations\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Iteration\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project iterations\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Iterations/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"UserStories\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"UserStory\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project user stories\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/UserStories/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Tasks\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Task\",\r\n          \"IsTypeComplex\": true,\r\n          \"Description\":
+        \"Collection of project tasks\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Tasks/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Bugs\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Bug\",\r\n          \"IsTypeComplex\": true,\r\n          \"Description\":
+        \"Collection of project bugs\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Bugs/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"TestCases\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"TestCase\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project test cases\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/TestCases/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"TestPlans\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"TestPlan\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project test plans\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/TestPlans/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Builds\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Build\",\r\n          \"IsTypeComplex\": true,\r\n          \"Description\":
+        \"Collection of project builds\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Builds/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Times\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Time\",\r\n          \"IsTypeComplex\": true,\r\n          \"Description\":
+        \"Collection of times posted to the project\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Times/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Revisions\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Revision\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project revisions\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Revisions/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"CustomActivities\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"CustomActivity\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of project custom activities\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/CustomActivities/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"ProjectMembers\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"ProjectMember\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Project members\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/ProjectMembers/meta\",\r\n          \"CanAdd\":
+        true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"TeamProjects\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"TeamProject\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Team projects\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/TeamProjects/meta\",\r\n          \"CanAdd\":
+        true,\r\n          \"CanRemove\": true,\r\n          \"IsBoundToParent\":
+        true\r\n        },\r\n        {\r\n          \"Name\": \"Requests\",\r\n          \"CanSet\":
+        false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\": false,\r\n
+        \         \"Type\": \"Request\",\r\n          \"IsTypeComplex\": true,\r\n
+        \         \"Description\": \"Collection of requests\",\r\n          \"Uri\":
+        \"http://tpruby.tpondemand.com/api/v1/Requests/meta\",\r\n          \"CanAdd\":
+        false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"TestPlanRuns\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"TestPlanRun\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"Collection of test plan runs\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/TestPlanRuns/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        },\r\n        {\r\n          \"Name\": \"Milestones\",\r\n
+        \         \"CanSet\": false,\r\n          \"CanGet\": true,\r\n          \"IsRequired\":
+        false,\r\n          \"Type\": \"Milestone\",\r\n          \"IsTypeComplex\":
+        true,\r\n          \"Description\": \"\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Milestones/meta\",\r\n
+        \         \"CanAdd\": false,\r\n          \"CanRemove\": false,\r\n          \"IsBoundToParent\":
+        false\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"ResourceMetadataRemarksDescription\":
+        {\r\n    \"Body\": \"Result of GET request is ordered by Name field with ascending
+        direction.\"\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 19 Aug 2013 15:59:38 GMT
+recorded_with: VCR 2.5.0
