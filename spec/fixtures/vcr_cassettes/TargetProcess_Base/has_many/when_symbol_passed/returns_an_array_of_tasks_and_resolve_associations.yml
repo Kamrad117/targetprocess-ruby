@@ -1,25 +1,27 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/UserStories/4522
+    method: post
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/
     body:
       encoding: UTF-8
-      string: format=json
-    headers: {}
+      string: '{"Name":"Pro60479920"}'
+    headers:
+      Content-Type:
+      - application/json
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:05 GMT
+      - Tue, 20 Aug 2013 11:19:02 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '992'
+      - '730'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -35,48 +37,104 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '84'
+      - '231'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
-      string: "{\r\n  \"Id\": 4522,\r\n  \"Name\": \"story2\",\r\n  \"Description\":
-        \"<div>asdasd</div>\\r\\n\",\r\n  \"StartDate\": \"\\/Date(1376566023000-0500)\\/\",\r\n
-        \ \"EndDate\": null,\r\n  \"CreateDate\": \"\\/Date(1376562204000-0500)\\/\",\r\n
-        \ \"ModifyDate\": \"\\/Date(1376566023000-0500)\\/\",\r\n  \"LastCommentDate\":
-        null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\": 74.0,\r\n  \"Effort\":
-        0.0000,\r\n  \"EffortCompleted\": 0.0000,\r\n  \"EffortToDo\": 0.0000,\r\n
-        \ \"TimeSpent\": 0.0000,\r\n  \"TimeRemain\": 0.0000,\r\n  \"InitialEstimate\":
+      string: "{\r\n  \"Id\": 4819,\r\n  \"Name\": \"Pro60479920\",\r\n  \"Description\":
+        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
+        \"\\/Date(1376997538000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997538000-0500)\\/\",\r\n
+        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
+        35.0,\r\n  \"IsActive\": true,\r\n  \"IsProduct\": false,\r\n  \"Abbreviation\":
+        \"PRO\",\r\n  \"MailReplyAddress\": null,\r\n  \"Color\": null,\r\n  \"EntityType\":
+        {\r\n    \"Id\": 1,\r\n    \"Name\": \"Project\"\r\n  },\r\n  \"Owner\": {\r\n
+        \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
+        \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
+        null,\r\n  \"Program\": null,\r\n  \"Process\": {\r\n    \"Id\": 3,\r\n    \"Name\":
+        \"Scrum\"\r\n  },\r\n  \"Company\": null,\r\n  \"CustomFields\": []\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:01 GMT
+- request:
+    method: post
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/UserStories/
+    body:
+      encoding: UTF-8
+      string: '{"Name":"story2","Project":{"id":4819}}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:18:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '945'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '205'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Id\": 4820,\r\n  \"Name\": \"story2\",\r\n  \"Description\":
+        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
+        \"\\/Date(1376997538000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997539000-0500)\\/\",\r\n
+        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
+        78.0,\r\n  \"Effort\": 0.0000,\r\n  \"EffortCompleted\": 0.0000,\r\n  \"EffortToDo\":
+        0.0000,\r\n  \"TimeSpent\": 0.0000,\r\n  \"TimeRemain\": 0.0000,\r\n  \"InitialEstimate\":
         0.0000,\r\n  \"EntityType\": {\r\n    \"Id\": 4,\r\n    \"Name\": \"UserStory\"\r\n
         \ },\r\n  \"Owner\": {\r\n    \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n
         \   \"LastName\": \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n
-        \ \"Project\": {\r\n    \"Id\": 2274,\r\n    \"Name\": \"Foobar\"\r\n  },\r\n
-        \ \"Release\": null,\r\n  \"Iteration\": null,\r\n  \"TeamIteration\": null,\r\n
-        \ \"Team\": null,\r\n  \"Priority\": {\r\n    \"Id\": 5,\r\n    \"Name\":
-        \"Nice To Have\"\r\n  },\r\n  \"EntityState\": {\r\n    \"Id\": 47,\r\n    \"Name\":
-        \"In Progress\"\r\n  },\r\n  \"Feature\": null,\r\n  \"CustomFields\": []\r\n}"
+        \ \"Project\": {\r\n    \"Id\": 4819,\r\n    \"Name\": \"Pro60479920\"\r\n
+        \ },\r\n  \"Release\": null,\r\n  \"Iteration\": null,\r\n  \"TeamIteration\":
+        null,\r\n  \"Team\": null,\r\n  \"Priority\": {\r\n    \"Id\": 5,\r\n    \"Name\":
+        \"Nice To Have\"\r\n  },\r\n  \"EntityState\": {\r\n    \"Id\": 46,\r\n    \"Name\":
+        \"Open\"\r\n  },\r\n  \"Feature\": null,\r\n  \"CustomFields\": []\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:04 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:01 GMT
 - request:
-    method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/UserStories/4522/Tasks
+    method: post
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Tasks/
     body:
       encoding: UTF-8
-      string: format=json
-    headers: {}
+      string: '{"Name":"task","UserStory":{"id":4820}}'
+    headers:
+      Content-Type:
+      - application/json
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:02 GMT
+      - Tue, 20 Aug 2013 11:19:04 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4550'
+      - '941'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -92,78 +150,387 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '45'
+      - '245'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
-      string: "{\r\n  \"Items\": [\r\n    {\r\n      \"Id\": 4523,\r\n      \"Name\":
-        \"task1\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
-        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376562226000-0500)\\/\",\r\n
-        \     \"ModifyDate\": \"\\/Date(1376562235000-0500)\\/\",\r\n      \"LastCommentDate\":
-        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 74.5,\r\n      \"Effort\":
+      string: "{\r\n  \"Id\": 4821,\r\n  \"Name\": \"task\",\r\n  \"Description\":
+        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
+        \"\\/Date(1376997539000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997539000-0500)\\/\",\r\n
+        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
+        78.5,\r\n  \"Effort\": 0.0000,\r\n  \"EffortCompleted\": 0.0000,\r\n  \"EffortToDo\":
+        0.0000,\r\n  \"TimeSpent\": 0.0000,\r\n  \"TimeRemain\": 0.0000,\r\n  \"EntityType\":
+        {\r\n    \"Id\": 5,\r\n    \"Name\": \"Task\"\r\n  },\r\n  \"Owner\": {\r\n
+        \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
+        \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
+        {\r\n    \"Id\": 4819,\r\n    \"Name\": \"Pro60479920\"\r\n  },\r\n  \"Release\":
+        null,\r\n  \"Iteration\": null,\r\n  \"TeamIteration\": null,\r\n  \"Team\":
+        null,\r\n  \"Priority\": {\r\n    \"Id\": 11,\r\n    \"Name\": \"-\"\r\n  },\r\n
+        \ \"EntityState\": {\r\n    \"Id\": 50,\r\n    \"Name\": \"Open\"\r\n  },\r\n
+        \ \"UserStory\": {\r\n    \"Id\": 4820,\r\n    \"Name\": \"story2\"\r\n  },\r\n
+        \ \"CustomFields\": []\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:02 GMT
+- request:
+    method: post
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Tasks/
+    body:
+      encoding: UTF-8
+      string: '{"Name":"task","UserStory":{"id":4820}}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:18:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '941'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '257'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Id\": 4822,\r\n  \"Name\": \"task\",\r\n  \"Description\":
+        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
+        \"\\/Date(1376997540000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997540000-0500)\\/\",\r\n
+        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
+        79.0,\r\n  \"Effort\": 0.0000,\r\n  \"EffortCompleted\": 0.0000,\r\n  \"EffortToDo\":
+        0.0000,\r\n  \"TimeSpent\": 0.0000,\r\n  \"TimeRemain\": 0.0000,\r\n  \"EntityType\":
+        {\r\n    \"Id\": 5,\r\n    \"Name\": \"Task\"\r\n  },\r\n  \"Owner\": {\r\n
+        \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
+        \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
+        {\r\n    \"Id\": 4819,\r\n    \"Name\": \"Pro60479920\"\r\n  },\r\n  \"Release\":
+        null,\r\n  \"Iteration\": null,\r\n  \"TeamIteration\": null,\r\n  \"Team\":
+        null,\r\n  \"Priority\": {\r\n    \"Id\": 11,\r\n    \"Name\": \"-\"\r\n  },\r\n
+        \ \"EntityState\": {\r\n    \"Id\": 50,\r\n    \"Name\": \"Open\"\r\n  },\r\n
+        \ \"UserStory\": {\r\n    \"Id\": 4820,\r\n    \"Name\": \"story2\"\r\n  },\r\n
+        \ \"CustomFields\": []\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:03 GMT
+- request:
+    method: post
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Tasks/
+    body:
+      encoding: UTF-8
+      string: '{"Name":"task","UserStory":{"id":4820}}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '941'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '249'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Id\": 4823,\r\n  \"Name\": \"task\",\r\n  \"Description\":
+        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
+        \"\\/Date(1376997541000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997541000-0500)\\/\",\r\n
+        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
+        79.5,\r\n  \"Effort\": 0.0000,\r\n  \"EffortCompleted\": 0.0000,\r\n  \"EffortToDo\":
+        0.0000,\r\n  \"TimeSpent\": 0.0000,\r\n  \"TimeRemain\": 0.0000,\r\n  \"EntityType\":
+        {\r\n    \"Id\": 5,\r\n    \"Name\": \"Task\"\r\n  },\r\n  \"Owner\": {\r\n
+        \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
+        \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
+        {\r\n    \"Id\": 4819,\r\n    \"Name\": \"Pro60479920\"\r\n  },\r\n  \"Release\":
+        null,\r\n  \"Iteration\": null,\r\n  \"TeamIteration\": null,\r\n  \"Team\":
+        null,\r\n  \"Priority\": {\r\n    \"Id\": 11,\r\n    \"Name\": \"-\"\r\n  },\r\n
+        \ \"EntityState\": {\r\n    \"Id\": 50,\r\n    \"Name\": \"Open\"\r\n  },\r\n
+        \ \"UserStory\": {\r\n    \"Id\": 4820,\r\n    \"Name\": \"story2\"\r\n  },\r\n
+        \ \"CustomFields\": []\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:04 GMT
+- request:
+    method: post
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Tasks/
+    body:
+      encoding: UTF-8
+      string: '{"Name":"task","UserStory":{"id":4820}}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '941'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '238'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Id\": 4824,\r\n  \"Name\": \"task\",\r\n  \"Description\":
+        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
+        \"\\/Date(1376997541000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997541000-0500)\\/\",\r\n
+        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
+        80.0,\r\n  \"Effort\": 0.0000,\r\n  \"EffortCompleted\": 0.0000,\r\n  \"EffortToDo\":
+        0.0000,\r\n  \"TimeSpent\": 0.0000,\r\n  \"TimeRemain\": 0.0000,\r\n  \"EntityType\":
+        {\r\n    \"Id\": 5,\r\n    \"Name\": \"Task\"\r\n  },\r\n  \"Owner\": {\r\n
+        \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
+        \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
+        {\r\n    \"Id\": 4819,\r\n    \"Name\": \"Pro60479920\"\r\n  },\r\n  \"Release\":
+        null,\r\n  \"Iteration\": null,\r\n  \"TeamIteration\": null,\r\n  \"Team\":
+        null,\r\n  \"Priority\": {\r\n    \"Id\": 11,\r\n    \"Name\": \"-\"\r\n  },\r\n
+        \ \"EntityState\": {\r\n    \"Id\": 50,\r\n    \"Name\": \"Open\"\r\n  },\r\n
+        \ \"UserStory\": {\r\n    \"Id\": 4820,\r\n    \"Name\": \"story2\"\r\n  },\r\n
+        \ \"CustomFields\": []\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:04 GMT
+- request:
+    method: post
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Tasks/
+    body:
+      encoding: UTF-8
+      string: '{"Name":"task","UserStory":{"id":4820}}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '941'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '243'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Id\": 4825,\r\n  \"Name\": \"task\",\r\n  \"Description\":
+        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
+        \"\\/Date(1376997542000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997542000-0500)\\/\",\r\n
+        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
+        80.5,\r\n  \"Effort\": 0.0000,\r\n  \"EffortCompleted\": 0.0000,\r\n  \"EffortToDo\":
+        0.0000,\r\n  \"TimeSpent\": 0.0000,\r\n  \"TimeRemain\": 0.0000,\r\n  \"EntityType\":
+        {\r\n    \"Id\": 5,\r\n    \"Name\": \"Task\"\r\n  },\r\n  \"Owner\": {\r\n
+        \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
+        \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
+        {\r\n    \"Id\": 4819,\r\n    \"Name\": \"Pro60479920\"\r\n  },\r\n  \"Release\":
+        null,\r\n  \"Iteration\": null,\r\n  \"TeamIteration\": null,\r\n  \"Team\":
+        null,\r\n  \"Priority\": {\r\n    \"Id\": 11,\r\n    \"Name\": \"-\"\r\n  },\r\n
+        \ \"EntityState\": {\r\n    \"Id\": 50,\r\n    \"Name\": \"Open\"\r\n  },\r\n
+        \ \"UserStory\": {\r\n    \"Id\": 4820,\r\n    \"Name\": \"story2\"\r\n  },\r\n
+        \ \"CustomFields\": []\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:05 GMT
+- request:
+    method: get
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/UserStories/4820/Tasks
+    body:
+      encoding: UTF-8
+      string: format=json
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '5702'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '64'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Items\": [\r\n    {\r\n      \"Id\": 4821,\r\n      \"Name\":
+        \"task\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
+        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376997539000-0500)\\/\",\r\n
+        \     \"ModifyDate\": \"\\/Date(1376997539000-0500)\\/\",\r\n      \"LastCommentDate\":
+        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 78.5,\r\n      \"Effort\":
         0.0000,\r\n      \"EffortCompleted\": 0.0000,\r\n      \"EffortToDo\": 0.0000,\r\n
         \     \"TimeSpent\": 0.0000,\r\n      \"TimeRemain\": 0.0000,\r\n      \"EntityType\":
         {\r\n        \"Id\": 5,\r\n        \"Name\": \"Task\"\r\n      },\r\n      \"Owner\":
         {\r\n        \"Id\": 1,\r\n        \"FirstName\": \"Administrator\",\r\n        \"LastName\":
         \"Administrator\"\r\n      },\r\n      \"LastCommentedUser\": null,\r\n      \"Project\":
-        {\r\n        \"Id\": 2274,\r\n        \"Name\": \"Foobar\"\r\n      },\r\n
+        {\r\n        \"Id\": 4819,\r\n        \"Name\": \"Pro60479920\"\r\n      },\r\n
         \     \"Release\": null,\r\n      \"Iteration\": null,\r\n      \"TeamIteration\":
         null,\r\n      \"Team\": null,\r\n      \"Priority\": {\r\n        \"Id\":
         11,\r\n        \"Name\": \"-\"\r\n      },\r\n      \"EntityState\": {\r\n
         \       \"Id\": 50,\r\n        \"Name\": \"Open\"\r\n      },\r\n      \"UserStory\":
-        {\r\n        \"Id\": 4522,\r\n        \"Name\": \"story2\"\r\n      },\r\n
-        \     \"CustomFields\": []\r\n    },\r\n    {\r\n      \"Id\": 4524,\r\n      \"Name\":
-        \"task2\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
-        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376562238000-0500)\\/\",\r\n
-        \     \"ModifyDate\": \"\\/Date(1376562238000-0500)\\/\",\r\n      \"LastCommentDate\":
-        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 75.0,\r\n      \"Effort\":
+        {\r\n        \"Id\": 4820,\r\n        \"Name\": \"story2\"\r\n      },\r\n
+        \     \"CustomFields\": []\r\n    },\r\n    {\r\n      \"Id\": 4822,\r\n      \"Name\":
+        \"task\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
+        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376997540000-0500)\\/\",\r\n
+        \     \"ModifyDate\": \"\\/Date(1376997540000-0500)\\/\",\r\n      \"LastCommentDate\":
+        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 79.0,\r\n      \"Effort\":
         0.0000,\r\n      \"EffortCompleted\": 0.0000,\r\n      \"EffortToDo\": 0.0000,\r\n
         \     \"TimeSpent\": 0.0000,\r\n      \"TimeRemain\": 0.0000,\r\n      \"EntityType\":
         {\r\n        \"Id\": 5,\r\n        \"Name\": \"Task\"\r\n      },\r\n      \"Owner\":
         {\r\n        \"Id\": 1,\r\n        \"FirstName\": \"Administrator\",\r\n        \"LastName\":
         \"Administrator\"\r\n      },\r\n      \"LastCommentedUser\": null,\r\n      \"Project\":
-        {\r\n        \"Id\": 2274,\r\n        \"Name\": \"Foobar\"\r\n      },\r\n
+        {\r\n        \"Id\": 4819,\r\n        \"Name\": \"Pro60479920\"\r\n      },\r\n
         \     \"Release\": null,\r\n      \"Iteration\": null,\r\n      \"TeamIteration\":
         null,\r\n      \"Team\": null,\r\n      \"Priority\": {\r\n        \"Id\":
         11,\r\n        \"Name\": \"-\"\r\n      },\r\n      \"EntityState\": {\r\n
         \       \"Id\": 50,\r\n        \"Name\": \"Open\"\r\n      },\r\n      \"UserStory\":
-        {\r\n        \"Id\": 4522,\r\n        \"Name\": \"story2\"\r\n      },\r\n
-        \     \"CustomFields\": []\r\n    },\r\n    {\r\n      \"Id\": 4525,\r\n      \"Name\":
-        \"task3\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
-        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376562240000-0500)\\/\",\r\n
-        \     \"ModifyDate\": \"\\/Date(1376562240000-0500)\\/\",\r\n      \"LastCommentDate\":
-        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 75.5,\r\n      \"Effort\":
+        {\r\n        \"Id\": 4820,\r\n        \"Name\": \"story2\"\r\n      },\r\n
+        \     \"CustomFields\": []\r\n    },\r\n    {\r\n      \"Id\": 4823,\r\n      \"Name\":
+        \"task\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
+        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376997541000-0500)\\/\",\r\n
+        \     \"ModifyDate\": \"\\/Date(1376997541000-0500)\\/\",\r\n      \"LastCommentDate\":
+        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 79.5,\r\n      \"Effort\":
         0.0000,\r\n      \"EffortCompleted\": 0.0000,\r\n      \"EffortToDo\": 0.0000,\r\n
         \     \"TimeSpent\": 0.0000,\r\n      \"TimeRemain\": 0.0000,\r\n      \"EntityType\":
         {\r\n        \"Id\": 5,\r\n        \"Name\": \"Task\"\r\n      },\r\n      \"Owner\":
         {\r\n        \"Id\": 1,\r\n        \"FirstName\": \"Administrator\",\r\n        \"LastName\":
         \"Administrator\"\r\n      },\r\n      \"LastCommentedUser\": null,\r\n      \"Project\":
-        {\r\n        \"Id\": 2274,\r\n        \"Name\": \"Foobar\"\r\n      },\r\n
+        {\r\n        \"Id\": 4819,\r\n        \"Name\": \"Pro60479920\"\r\n      },\r\n
         \     \"Release\": null,\r\n      \"Iteration\": null,\r\n      \"TeamIteration\":
         null,\r\n      \"Team\": null,\r\n      \"Priority\": {\r\n        \"Id\":
         11,\r\n        \"Name\": \"-\"\r\n      },\r\n      \"EntityState\": {\r\n
         \       \"Id\": 50,\r\n        \"Name\": \"Open\"\r\n      },\r\n      \"UserStory\":
-        {\r\n        \"Id\": 4522,\r\n        \"Name\": \"story2\"\r\n      },\r\n
-        \     \"CustomFields\": []\r\n    },\r\n    {\r\n      \"Id\": 4526,\r\n      \"Name\":
-        \"task4\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
-        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376562242000-0500)\\/\",\r\n
-        \     \"ModifyDate\": \"\\/Date(1376562243000-0500)\\/\",\r\n      \"LastCommentDate\":
-        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 76.0,\r\n      \"Effort\":
+        {\r\n        \"Id\": 4820,\r\n        \"Name\": \"story2\"\r\n      },\r\n
+        \     \"CustomFields\": []\r\n    },\r\n    {\r\n      \"Id\": 4824,\r\n      \"Name\":
+        \"task\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
+        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376997541000-0500)\\/\",\r\n
+        \     \"ModifyDate\": \"\\/Date(1376997541000-0500)\\/\",\r\n      \"LastCommentDate\":
+        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 80.0,\r\n      \"Effort\":
         0.0000,\r\n      \"EffortCompleted\": 0.0000,\r\n      \"EffortToDo\": 0.0000,\r\n
         \     \"TimeSpent\": 0.0000,\r\n      \"TimeRemain\": 0.0000,\r\n      \"EntityType\":
         {\r\n        \"Id\": 5,\r\n        \"Name\": \"Task\"\r\n      },\r\n      \"Owner\":
         {\r\n        \"Id\": 1,\r\n        \"FirstName\": \"Administrator\",\r\n        \"LastName\":
         \"Administrator\"\r\n      },\r\n      \"LastCommentedUser\": null,\r\n      \"Project\":
-        {\r\n        \"Id\": 2274,\r\n        \"Name\": \"Foobar\"\r\n      },\r\n
+        {\r\n        \"Id\": 4819,\r\n        \"Name\": \"Pro60479920\"\r\n      },\r\n
         \     \"Release\": null,\r\n      \"Iteration\": null,\r\n      \"TeamIteration\":
         null,\r\n      \"Team\": null,\r\n      \"Priority\": {\r\n        \"Id\":
         11,\r\n        \"Name\": \"-\"\r\n      },\r\n      \"EntityState\": {\r\n
         \       \"Id\": 50,\r\n        \"Name\": \"Open\"\r\n      },\r\n      \"UserStory\":
-        {\r\n        \"Id\": 4522,\r\n        \"Name\": \"story2\"\r\n      },\r\n
+        {\r\n        \"Id\": 4820,\r\n        \"Name\": \"story2\"\r\n      },\r\n
+        \     \"CustomFields\": []\r\n    },\r\n    {\r\n      \"Id\": 4825,\r\n      \"Name\":
+        \"task\",\r\n      \"Description\": null,\r\n      \"StartDate\": null,\r\n
+        \     \"EndDate\": null,\r\n      \"CreateDate\": \"\\/Date(1376997542000-0500)\\/\",\r\n
+        \     \"ModifyDate\": \"\\/Date(1376997542000-0500)\\/\",\r\n      \"LastCommentDate\":
+        null,\r\n      \"Tags\": \"\",\r\n      \"NumericPriority\": 80.5,\r\n      \"Effort\":
+        0.0000,\r\n      \"EffortCompleted\": 0.0000,\r\n      \"EffortToDo\": 0.0000,\r\n
+        \     \"TimeSpent\": 0.0000,\r\n      \"TimeRemain\": 0.0000,\r\n      \"EntityType\":
+        {\r\n        \"Id\": 5,\r\n        \"Name\": \"Task\"\r\n      },\r\n      \"Owner\":
+        {\r\n        \"Id\": 1,\r\n        \"FirstName\": \"Administrator\",\r\n        \"LastName\":
+        \"Administrator\"\r\n      },\r\n      \"LastCommentedUser\": null,\r\n      \"Project\":
+        {\r\n        \"Id\": 4819,\r\n        \"Name\": \"Pro60479920\"\r\n      },\r\n
+        \     \"Release\": null,\r\n      \"Iteration\": null,\r\n      \"TeamIteration\":
+        null,\r\n      \"Team\": null,\r\n      \"Priority\": {\r\n        \"Id\":
+        11,\r\n        \"Name\": \"-\"\r\n      },\r\n      \"EntityState\": {\r\n
+        \       \"Id\": 50,\r\n        \"Name\": \"Open\"\r\n      },\r\n      \"UserStory\":
+        {\r\n        \"Id\": 4820,\r\n        \"Name\": \"story2\"\r\n      },\r\n
         \     \"CustomFields\": []\r\n    }\r\n  ]\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:04 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:06 GMT
 - request:
     method: get
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/EntityTypes/4
@@ -179,55 +546,11 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:06 GMT
+      - Tue, 20 Aug 2013 11:19:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
       - '89'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=60
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '-1'
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Aspnetmvc-Version:
-      - '3.0'
-      X-Stopwatch:
-      - '3'
-      X-Ua-Compatible:
-      - IE=edge
-    body:
-      encoding: UTF-8
-      string: "{\r\n  \"Id\": 4,\r\n  \"Name\": \"UserStory\",\r\n  \"IsExtendable\":
-        true,\r\n  \"IsSearchable\": true\r\n}"
-    http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:05 GMT
-- request:
-    method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/GeneralUsers/1
-    body:
-      encoding: UTF-8
-      string: format=json
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.4.1
-      Date:
-      - Mon, 19 Aug 2013 16:00:03 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '334'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -248,16 +571,13 @@ http_interactions:
       - IE=edge
     body:
       encoding: UTF-8
-      string: "{\r\n  \"Id\": 1,\r\n  \"FirstName\": \"Administrator\",\r\n  \"LastName\":
-        \"Administrator\",\r\n  \"Email\": \"Dzmitry_Bradnitski@gmail.com\",\r\n  \"Login\":
-        \"admin\",\r\n  \"CreateDate\": \"\\/Date(1376197595627-0500)\\/\",\r\n  \"ModifyDate\":
-        \"\\/Date(1376218457000-0500)\\/\",\r\n  \"DeleteDate\": null,\r\n  \"IsActive\":
-        true,\r\n  \"IsAdministrator\": true,\r\n  \"Kind\": \"User\"\r\n}"
+      string: "{\r\n  \"Id\": 4,\r\n  \"Name\": \"UserStory\",\r\n  \"IsExtendable\":
+        true,\r\n  \"IsSearchable\": true\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:05 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:06 GMT
 - request:
     method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/2274
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/GeneralUsers/1
     body:
       encoding: UTF-8
       string: format=json
@@ -270,11 +590,11 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:07 GMT
+      - Tue, 20 Aug 2013 11:19:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '725'
+      - '334'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -290,24 +610,71 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '36'
+      - '7'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
-      string: "{\r\n  \"Id\": 2274,\r\n  \"Name\": \"Foobar\",\r\n  \"Description\":
+      string: "{\r\n  \"Id\": 1,\r\n  \"FirstName\": \"Administrator\",\r\n  \"LastName\":
+        \"Administrator\",\r\n  \"Email\": \"Dzmitry_Bradnitski@gmail.com\",\r\n  \"Login\":
+        \"admin\",\r\n  \"CreateDate\": \"\\/Date(1376197595627-0500)\\/\",\r\n  \"ModifyDate\":
+        \"\\/Date(1376218457000-0500)\\/\",\r\n  \"DeleteDate\": null,\r\n  \"IsActive\":
+        true,\r\n  \"IsAdministrator\": true,\r\n  \"Kind\": \"User\"\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:07 GMT
+- request:
+    method: get
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/4819
+    body:
+      encoding: UTF-8
+      string: format=json
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '730'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '51'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Id\": 4819,\r\n  \"Name\": \"Pro60479920\",\r\n  \"Description\":
         null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
-        \"\\/Date(1376385752000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376385759000-0500)\\/\",\r\n
+        \"\\/Date(1376997538000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1376997538000-0500)\\/\",\r\n
         \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
-        21.0,\r\n  \"IsActive\": true,\r\n  \"IsProduct\": false,\r\n  \"Abbreviation\":
-        \"FOO\",\r\n  \"MailReplyAddress\": null,\r\n  \"Color\": null,\r\n  \"EntityType\":
+        35.0,\r\n  \"IsActive\": true,\r\n  \"IsProduct\": false,\r\n  \"Abbreviation\":
+        \"PRO\",\r\n  \"MailReplyAddress\": null,\r\n  \"Color\": null,\r\n  \"EntityType\":
         {\r\n    \"Id\": 1,\r\n    \"Name\": \"Project\"\r\n  },\r\n  \"Owner\": {\r\n
         \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
         \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
         null,\r\n  \"Program\": null,\r\n  \"Process\": {\r\n    \"Id\": 3,\r\n    \"Name\":
         \"Scrum\"\r\n  },\r\n  \"Company\": null,\r\n  \"CustomFields\": []\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:06 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:07 GMT
 - request:
     method: get
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/EntityTypes/1
@@ -323,7 +690,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:04 GMT
+      - Tue, 20 Aug 2013 11:19:04 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -343,7 +710,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '3'
+      - '4'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -351,7 +718,7 @@ http_interactions:
       string: "{\r\n  \"Id\": 1,\r\n  \"Name\": \"Project\",\r\n  \"IsExtendable\":
         true,\r\n  \"IsSearchable\": false\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:06 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:08 GMT
 - request:
     method: get
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/GeneralUsers/1
@@ -367,11 +734,58 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:08 GMT
+      - Tue, 20 Aug 2013 11:19:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
       - '334'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '6'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"Id\": 1,\r\n  \"FirstName\": \"Administrator\",\r\n  \"LastName\":
+        \"Administrator\",\r\n  \"Email\": \"Dzmitry_Bradnitski@gmail.com\",\r\n  \"Login\":
+        \"admin\",\r\n  \"CreateDate\": \"\\/Date(1376197595627-0500)\\/\",\r\n  \"ModifyDate\":
+        \"\\/Date(1376218457000-0500)\\/\",\r\n  \"DeleteDate\": null,\r\n  \"IsActive\":
+        true,\r\n  \"IsAdministrator\": true,\r\n  \"Kind\": \"User\"\r\n}"
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:08 GMT
+- request:
+    method: get
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Processes/3
+    body:
+      encoding: UTF-8
+      string: format=json
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '149'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -392,58 +806,11 @@ http_interactions:
       - IE=edge
     body:
       encoding: UTF-8
-      string: "{\r\n  \"Id\": 1,\r\n  \"FirstName\": \"Administrator\",\r\n  \"LastName\":
-        \"Administrator\",\r\n  \"Email\": \"Dzmitry_Bradnitski@gmail.com\",\r\n  \"Login\":
-        \"admin\",\r\n  \"CreateDate\": \"\\/Date(1376197595627-0500)\\/\",\r\n  \"ModifyDate\":
-        \"\\/Date(1376218457000-0500)\\/\",\r\n  \"DeleteDate\": null,\r\n  \"IsActive\":
-        true,\r\n  \"IsAdministrator\": true,\r\n  \"Kind\": \"User\"\r\n}"
-    http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:07 GMT
-- request:
-    method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Processes/3
-    body:
-      encoding: UTF-8
-      string: format=json
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.4.1
-      Date:
-      - Mon, 19 Aug 2013 16:00:05 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '149'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=60
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '-1'
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Aspnetmvc-Version:
-      - '3.0'
-      X-Stopwatch:
-      - '2'
-      X-Ua-Compatible:
-      - IE=edge
-    body:
-      encoding: UTF-8
       string: "{\r\n  \"Id\": 3,\r\n  \"Name\": \"Scrum\",\r\n  \"IsDefault\": true,\r\n
         \ \"Description\": \"Scrum is an iterative, incremental methodology for project
         management.\"\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:07 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:09 GMT
 - request:
     method: get
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Priorities/5
@@ -459,7 +826,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:09 GMT
+      - Tue, 20 Aug 2013 11:19:11 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -479,7 +846,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '8'
+      - '7'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -488,7 +855,7 @@ http_interactions:
         5,\r\n  \"IsDefault\": false,\r\n  \"EntityType\": {\r\n    \"Id\": 4,\r\n
         \   \"Name\": \"UserStory\"\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:08 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:09 GMT
 - request:
     method: get
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/EntityTypes/4
@@ -504,7 +871,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:06 GMT
+      - Tue, 20 Aug 2013 11:19:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -524,7 +891,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '3'
+      - '4'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -532,10 +899,10 @@ http_interactions:
       string: "{\r\n  \"Id\": 4,\r\n  \"Name\": \"UserStory\",\r\n  \"IsExtendable\":
         true,\r\n  \"IsSearchable\": true\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:08 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:10 GMT
 - request:
     method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/EntityStates/47
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/EntityStates/46
     body:
       encoding: UTF-8
       string: format=json
@@ -548,11 +915,11 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:10 GMT
+      - Tue, 20 Aug 2013 11:19:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '348'
+      - '298'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -568,63 +935,18 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '9'
+      - '15'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
-      string: "{\r\n  \"Id\": 47,\r\n  \"Name\": \"In Progress\",\r\n  \"IsInitial\":
-        false,\r\n  \"IsFinal\": false,\r\n  \"IsPlanned\": false,\r\n  \"IsCommentRequired\":
-        false,\r\n  \"NumericPriority\": 47.0,\r\n  \"Role\": {\r\n    \"Id\": 1,\r\n
-        \   \"Name\": \"Programmer\"\r\n  },\r\n  \"EntityType\": {\r\n    \"Id\":
-        4,\r\n    \"Name\": \"UserStory\"\r\n  },\r\n  \"Process\": {\r\n    \"Id\":
-        3,\r\n    \"Name\": \"Scrum\"\r\n  }\r\n}"
+      string: "{\r\n  \"Id\": 46,\r\n  \"Name\": \"Open\",\r\n  \"IsInitial\": true,\r\n
+        \ \"IsFinal\": false,\r\n  \"IsPlanned\": false,\r\n  \"IsCommentRequired\":
+        false,\r\n  \"NumericPriority\": 46.0,\r\n  \"Role\": null,\r\n  \"EntityType\":
+        {\r\n    \"Id\": 4,\r\n    \"Name\": \"UserStory\"\r\n  },\r\n  \"Process\":
+        {\r\n    \"Id\": 3,\r\n    \"Name\": \"Scrum\"\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:09 GMT
-- request:
-    method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Roles/1
-    body:
-      encoding: UTF-8
-      string: format=json
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.4.1
-      Date:
-      - Mon, 19 Aug 2013 16:00:07 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '81'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=60
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '-1'
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Aspnetmvc-Version:
-      - '3.0'
-      X-Stopwatch:
-      - '10'
-      X-Ua-Compatible:
-      - IE=edge
-    body:
-      encoding: UTF-8
-      string: "{\r\n  \"Id\": 1,\r\n  \"Name\": \"Programmer\",\r\n  \"IsPair\": true,\r\n
-        \ \"HasEffort\": true\r\n}"
-    http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:09 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:10 GMT
 - request:
     method: get
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/EntityTypes/4
@@ -640,7 +962,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:11 GMT
+      - Tue, 20 Aug 2013 11:19:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -660,7 +982,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '3'
+      - '4'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -668,7 +990,7 @@ http_interactions:
       string: "{\r\n  \"Id\": 4,\r\n  \"Name\": \"UserStory\",\r\n  \"IsExtendable\":
         true,\r\n  \"IsSearchable\": true\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:10 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:11 GMT
 - request:
     method: get
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Processes/3
@@ -684,7 +1006,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 16:00:08 GMT
+      - Tue, 20 Aug 2013 11:19:13 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -704,7 +1026,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '3'
+      - '4'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -713,5 +1035,87 @@ http_interactions:
         \ \"Description\": \"Scrum is an iterative, incremental methodology for project
         management.\"\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 16:00:10 GMT
+  recorded_at: Tue, 20 Aug 2013 11:19:11 GMT
+- request:
+    method: delete
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/4819/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:08 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '71'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:12 GMT
+- request:
+    method: delete
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/UserStories/4820/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Tue, 20 Aug 2013 11:19:15 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '-1'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Aspnetmvc-Version:
+      - '3.0'
+      X-Stopwatch:
+      - '1002'
+      X-Ua-Compatible:
+      - IE=edge
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 20 Aug 2013 11:19:13 GMT
 recorded_with: VCR 2.5.0

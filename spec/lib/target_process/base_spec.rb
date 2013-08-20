@@ -315,11 +315,14 @@ describe TargetProcess::Base, vcr: true do
   describe '#belongs_to' do
     context "when symbol passed" do
       it 'returns associated project' do
-        us = TargetProcess::UserStory.find(4522)
+        p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
+        us = TargetProcess::UserStory.new(name: "story2", project: { id: p.id }).save
 
         expect(us.project).to be_an_instance_of(TargetProcess::Project)
         expect(us.references[:project]).to eq(us.project)
         expect(us.project.collections[:user_stories]).to eq([us])
+        p.delete
+        us.delete
       end
     end
   end
@@ -327,7 +330,11 @@ describe TargetProcess::Base, vcr: true do
   describe 'has_many' do
     context "when symbol passed" do
       it 'returns an array of tasks and resolve associations' do
-        us = TargetProcess::UserStory.find(4522)
+        p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
+        us = TargetProcess::UserStory.new(name: "story2", project: { id: p.id }).save
+        5.times do
+          TargetProcess::Task.new(name: "task", user_story: { id: us.id }).save
+        end
         tasks = us.tasks
 
         expect(tasks).to be_an_instance_of(Array)
@@ -336,16 +343,28 @@ describe TargetProcess::Base, vcr: true do
           expect(task.references[:user_story]).to eq(us)
         end
         expect(us.collections[:tasks]).to eq(tasks)
+        p.delete
+        us.delete
       end
     end
 
     context "when hash passed" do
       it 'returns an array and resolve associations' do
-        us = TargetProcess::UserStory.find(4522)
+        p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
+        us = TargetProcess::UserStory.new(name: "story2",
+                                          project: { id: p.id },
+                                          owner: { id: 1 }
+                                          ).save
+        TargetProcess::Assignment.new(assignable: { id: us.id },
+                                      general_user: { id: 1 },
+                                      role: { id: 1}
+                                      ).save
         au = us.assigned_user
 
         expect(au).to be_an_instance_of(Array)
         expect(au.first).to be_an_instance_of(TargetProcess::GeneralUser)
+        us.delete
+        p.delete
       end
     end
   end
