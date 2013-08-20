@@ -316,7 +316,9 @@ describe TargetProcess::Base, vcr: true do
     context "when symbol passed" do
       it 'returns associated project' do
         p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
-        us = TargetProcess::UserStory.new(name: "story2", project: { id: p.id }).save
+        us = TargetProcess::UserStory.new(name: "story2",
+                                          project: { id: p.id }
+                                          ).save
 
         expect(us.project).to be_an_instance_of(TargetProcess::Project)
         expect(us.references[:project]).to eq(us.project)
@@ -331,7 +333,9 @@ describe TargetProcess::Base, vcr: true do
     context "when symbol passed" do
       it 'returns an array of tasks and resolve associations' do
         p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
-        us = TargetProcess::UserStory.new(name: "story2", project: { id: p.id }).save
+        us = TargetProcess::UserStory.new(name: "story2",
+                                          project: { id: p.id }
+                                          ).save
         5.times do
           TargetProcess::Task.new(name: "task", user_story: { id: us.id }).save
         end

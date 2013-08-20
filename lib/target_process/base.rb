@@ -122,7 +122,7 @@ module  TargetProcess
             result = "TargetProcess::#{klass}".constantize.new
             result.attributes.merge!(hash)
             result.references.merge!(self.class.to_s.demodulize.underscore.to_sym => self)
-            result || []
+            result
           end
         end
       end
