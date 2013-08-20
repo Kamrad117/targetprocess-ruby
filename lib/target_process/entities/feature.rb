@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Feature
-    include TargetProcess::Base
+  class Feature
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -25,6 +25,5 @@ module TargetProcess
     belongs_to :team
     belongs_to :priority
     belongs_to :entity_state
-
   end
 end

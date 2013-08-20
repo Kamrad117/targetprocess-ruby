@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Bug
-    include TargetProcess::Base
+  class Bug
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -27,6 +27,5 @@ module TargetProcess
     belongs_to :build
     belongs_to :user_story
     belongs_to :severity
-
   end
 end

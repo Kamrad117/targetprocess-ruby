@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Impediment
-    include TargetProcess::Base
+  class Impediment
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -16,6 +16,5 @@ module TargetProcess
     belongs_to :entity_state
     belongs_to :priority
     belongs_to :responsible, 'User'
-
   end
 end

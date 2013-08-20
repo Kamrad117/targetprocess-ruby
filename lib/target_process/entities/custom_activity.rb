@@ -1,9 +1,8 @@
 module TargetProcess
-  class TargetProcess::CustomActivity
-    include TargetProcess::Base
+  class CustomActivity
+    include Base
     has_many :times
     belongs_to :project
     belongs_to :user
-
   end
 end

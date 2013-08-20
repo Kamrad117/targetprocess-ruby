@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Request
-    include TargetProcess::Base
+  class Request
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -26,6 +26,5 @@ module TargetProcess
     belongs_to :priority
     belongs_to :entity_state
     belongs_to :request_type
-
   end
 end

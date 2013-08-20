@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Iteration
-    include TargetProcess::Base
+  class Iteration
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -19,6 +19,5 @@ module TargetProcess
     belongs_to :last_commented_user, 'GeneralUser'
     belongs_to :project
     belongs_to :release
-
   end
 end

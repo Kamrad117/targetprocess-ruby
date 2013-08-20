@@ -1,6 +1,5 @@
 module TargetProcess
-  class TargetProcess::MessageUid
-    include TargetProcess::Base
-
+  class MessageUid
+    include Base
   end
 end

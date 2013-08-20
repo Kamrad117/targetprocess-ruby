@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Team
-    include TargetProcess::Base
+  class Team
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -15,6 +15,5 @@ module TargetProcess
     belongs_to :owner, 'GeneralUser'
     belongs_to :last_commented_user, 'GeneralUser'
     belongs_to :project
-
   end
 end

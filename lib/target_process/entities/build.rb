@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Build
-    include TargetProcess::Base
+  class Build
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -15,6 +15,5 @@ module TargetProcess
     belongs_to :project
     belongs_to :release
     belongs_to :iteration
-
   end
 end

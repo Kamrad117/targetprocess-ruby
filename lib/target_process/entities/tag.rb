@@ -1,7 +1,6 @@
 module TargetProcess
-  class TargetProcess::Tag
-    include TargetProcess::Base
+  class Tag
+    include Base
     has_many :generals
-
   end
 end

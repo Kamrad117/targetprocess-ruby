@@ -1,8 +1,7 @@
 module TargetProcess
-  class TargetProcess::RoleEffort
-    include TargetProcess::Base
+  class RoleEffort
+    include Base
     belongs_to :assignable
     belongs_to :role
-
   end
 end

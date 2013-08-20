@@ -115,12 +115,11 @@ module  TargetProcess
 
       def has_many(name, klass = nil)
         klass ||= name.to_s.singularize.camelize
-        klass = ("TargetProcess::" + klass).constantize
         define_method(name) do
           path = entity_path + name.to_s.camelize
           @collections[name] ||=
           TargetProcess.client.get(path)[:items].collect! do |hash|
-            result = klass.new
+            result = "TargetProcess::#{klass}".constantize.new
             result.attributes.merge!(hash)
             result.references.merge!(self.class.to_s.demodulize.underscore.to_sym => self)
             result || []
@@ -130,12 +129,11 @@ module  TargetProcess
 
       def belongs_to (name, klass = nil)
         klass ||= name.to_s.camelize
-        klass = ("TargetProcess::" + klass).constantize
         define_method(name) do
           if @attributes[name]
             id = @attributes[name][:id]
             self_klass = self.class.to_s.demodulize.pluralize.underscore.to_sym
-            @references[name] ||= klass.find(id)
+            @references[name] ||= "TargetProcess::#{klass}".constantize.find(id)
             @references[name].collections.merge!(self_klass => [self])
             @references[name]
           else

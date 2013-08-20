@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Assignable
-    include TargetProcess::Base
+  class Assignable
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -23,6 +23,5 @@ module TargetProcess
     belongs_to :team
     belongs_to :priority
     belongs_to :entity_state
-
   end
 end

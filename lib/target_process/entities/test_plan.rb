@@ -1,5 +1,5 @@
 module TargetProcess
-  class General
+  class TestPlan
     include Base
     has_many :comments
     has_many :messages
@@ -7,6 +7,8 @@ module TargetProcess
     has_many :master_relations, 'Relation'
     has_many :slave_relations, 'Relation'
     has_many :attachments
+    has_many :test_cases
+    has_many :test_plan_runs
     belongs_to :entity_type
     belongs_to :owner, 'GeneralUser'
     belongs_to :last_commented_user, 'GeneralUser'

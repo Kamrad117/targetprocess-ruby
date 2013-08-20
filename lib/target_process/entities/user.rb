@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::User
-    include TargetProcess::Base
+  class User
+    include Base
     has_many :assignables
     has_many :comments
     has_many :requests
@@ -12,6 +12,5 @@ module TargetProcess
     has_many :project_members
     has_many :milestones
     belongs_to :role
-
   end
 end

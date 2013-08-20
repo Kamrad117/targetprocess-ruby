@@ -1,9 +1,8 @@
 module TargetProcess
-  class TargetProcess::Assignment
-    include TargetProcess::Base
+  class Assignment
+    include Base
     belongs_to :assignable
     belongs_to :general_user, 'User'
     belongs_to :role
-
   end
 end

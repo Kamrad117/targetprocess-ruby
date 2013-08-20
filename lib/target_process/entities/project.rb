@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::Project
-    include TargetProcess::Base
+  class Project
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -32,6 +32,5 @@ module TargetProcess
     belongs_to :program
     belongs_to :process
     belongs_to :company
-
   end
 end

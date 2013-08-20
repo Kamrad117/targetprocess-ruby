@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::TestCase
-    include TargetProcess::Base
+  class TestCase
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -15,6 +15,5 @@ module TargetProcess
     belongs_to :project
     belongs_to :user_story
     belongs_to :priority
-
   end
 end

@@ -1,7 +1,6 @@
 module TargetProcess
-  class TargetProcess::RequestType
-    include TargetProcess::Base
+  class RequestType
+    include Base
     has_many :requests
-
   end
 end

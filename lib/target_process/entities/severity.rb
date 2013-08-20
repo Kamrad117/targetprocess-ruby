@@ -1,6 +1,5 @@
 module TargetProcess
-  class TargetProcess::Severity
-    include TargetProcess::Base
-
+  class Severity
+    include Base
   end
 end

@@ -1,7 +1,6 @@
 module TargetProcess
-  class TargetProcess::Company
-    include TargetProcess::Base
+  class Company
+    include Base
     has_many :projects
-
   end
 end

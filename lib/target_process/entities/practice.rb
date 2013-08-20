@@ -1,7 +1,6 @@
 module TargetProcess
-  class TargetProcess::Practice
-    include TargetProcess::Base
+  class Practice
+    include Base
     has_many :processes
-
   end
 end

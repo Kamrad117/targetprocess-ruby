@@ -1,6 +1,6 @@
 module TargetProcess
-  class TargetProcess::TestPlanRun
-    include TargetProcess::Base
+  class TestPlanRun
+    include Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -26,6 +26,5 @@ module TargetProcess
     belongs_to :entity_state
     belongs_to :build
     belongs_to :test_plan
-
   end
 end
