@@ -8,14 +8,12 @@ module  TargetProcess
       base.extend(ClassMethods)
     end
 
-    attr_reader :attributes, :changed_attributes, :references, :collections
+    attr_reader :attributes, :changed_attributes
 
     module InstanceMethods
       def initialize(hash = {})
         @changed_attributes = hash
         @attributes = {}
-        @references = {}
-        @collections = {}
       end
 
       def delete
@@ -94,7 +92,7 @@ module  TargetProcess
         TargetProcess.client.get(path, options)[:items].collect! do |hash|
           result = new
           result.attributes.merge!(hash)
-          result || []
+          result
         end
       end
 
@@ -117,11 +115,9 @@ module  TargetProcess
         klass ||= name.to_s.singularize.camelize
         define_method(name) do
           path = entity_path + name.to_s.camelize
-          @collections[name] ||=
           TargetProcess.client.get(path)[:items].collect! do |hash|
             result = "TargetProcess::#{klass}".constantize.new
             result.attributes.merge!(hash)
-            result.references.merge!(self.class.to_s.demodulize.underscore.to_sym => self)
             result
           end
         end
@@ -133,9 +129,8 @@ module  TargetProcess
           if @attributes[name]
             id = @attributes[name][:id]
             self_klass = self.class.to_s.demodulize.pluralize.underscore.to_sym
-            @references[name] ||= "TargetProcess::#{klass}".constantize.find(id)
-            @references[name].collections.merge!(self_klass => [self])
-            @references[name]
+            reference = "TargetProcess::#{klass}".constantize.find(id)
+            reference
           else
             nil
           end
