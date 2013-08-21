@@ -42,7 +42,7 @@ module  TargetProcess
       end
 
       def method_missing(name, *args)
-        if respond_to?(name)
+        if respond_to_missing?(name)
           if name.to_s.match(/=\z/)
             key = name.to_s.delete('=').to_sym
             if @attributes[key] == args.first
@@ -115,11 +115,11 @@ module  TargetProcess
         klass ||= name.to_s.singularize.camelize
         define_method(name) do
           path = entity_path + name.to_s.camelize
-          TargetProcess.client.get(path)[:items].collect! do |hash|
-            result = "TargetProcess::#{klass}".constantize.new
-            result.attributes.merge!(hash)
-            result
-          end
+          collection = TargetProcess.client.get(path)[:items].collect do |hash|
+                         item = "TargetProcess::#{klass}".constantize.new
+                         item.attributes.merge!(hash)
+                         item
+                       end
         end
       end
 
@@ -127,12 +127,16 @@ module  TargetProcess
         klass ||= name.to_s.camelize
         define_method(name) do
           if @attributes[name]
-            id = @attributes[name][:id]
-            self_klass = self.class.to_s.demodulize.pluralize.underscore.to_sym
-            reference = "TargetProcess::#{klass}".constantize.find(id)
-            reference
+            "TargetProcess::#{klass}".constantize.find(@attributes[name][:id])
           else
             nil
+          end
+        end
+
+        setter_name = (name.to_s + '=').to_sym
+        define_method(setter_name) do |val|
+          if val.class.to_s.demodulize == klass
+            @changed_attributes.merge!(name => { id: val.id })
           end
         end
       end
