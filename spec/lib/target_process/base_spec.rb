@@ -313,7 +313,7 @@ describe TargetProcess::Base, vcr: true do
   end
 
   describe '#belongs_to' do
-    it 'provide getter for referenced item' do
+    it 'provide getter for referenced items' do
       p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
       us = TargetProcess::UserStory.new(name: "story2",
                                         project: { id: p.id }
@@ -324,6 +324,19 @@ describe TargetProcess::Base, vcr: true do
       expect(p.user_stories.first).to eq(us)
       p.delete
       us.delete
+    end
+
+    it 'provide setters for referenced items' do
+      project_name = "Pro#{rand(999_999_999)}"
+      p = TargetProcess::Project.new(name: project_name).save
+      us = TargetProcess::UserStory.new(name: "story2", project: nil)
+
+      us.project = p
+
+      expect(us.changed_attributes[:project]).to eq({id: p.id})
+      us.save
+      expect(us.project).to eq(p)
+      expect(p.user_stories).to include(us)
     end
   end
 
