@@ -42,7 +42,7 @@ module  TargetProcess
       end
 
       def method_missing(name, *args)
-        if respond_to?(name)
+        if respond_to_missing?(name)
           if name.to_s.match(/=\z/)
             key = name.to_s.delete('=').to_sym
             if @attributes[key] == args.first
@@ -133,6 +133,13 @@ module  TargetProcess
             reference
           else
             nil
+          end
+        end
+
+        setter_name = (name.to_s + '=').to_sym
+        define_method(setter_name) do |val|
+          if val.class.to_s.demodulize == klass
+            @changed_attributes.merge!(name => { id: val.id })
           end
         end
       end
