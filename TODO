@@ -3,7 +3,7 @@
 
   Impediment: has_many association doesn't know how current entity named in collections.
   For example: GeneralUser has_many Assignables, but Assignable doesn't have any
-  GeneralUser - Assignable belongs to owner.
+  GeneralUser directly - Assignable belongs to GeneralUser as owner.
 
 2 (Need to discuss) belongs_to associations setters works fine when called on entity:
   # task.owner = general_user
