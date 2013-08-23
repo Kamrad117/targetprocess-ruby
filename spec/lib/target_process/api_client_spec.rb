@@ -51,7 +51,7 @@ describe TargetProcess::APIClient, vcr: true do
   describe '#post' do
     context 'with correct path and options' do
       it 'returns hash of entities attributes' do
-        resp = subject.post('projects', { name: "foobar#{rand(9_999_999)}" })
+        resp = subject.post('projects', { name: "foobar#{SecureRandom.uuid}" })
 
         expect(resp[:name]).to match(/foobar/)
         [:id, :name, :description, :start_date, :end_date, :create_date,
@@ -77,8 +77,8 @@ describe TargetProcess::APIClient, vcr: true do
   describe '#delete' do
     context 'with url to existed entity' do
       it 'respond with 200 code' do
-        project = TargetProcess::Project.new(name: "Foo-#{rand(999_999)}").save
-        expect(subject.delete("projects/#{project.id}").code).to eq('200')
+        pro = TargetProcess::Project.new(name: "Foo#{SecureRandom.uuid}").save
+        expect(subject.delete("projects/#{pro.id}").code).to eq('200')
       end
     end
 

@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/entitytypes
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/entitytypes?format=json&orderby=id&skip=4&take=2
     body:
-      encoding: UTF-8
-      string: orderby=id&take=2&skip=4&format=json
+      encoding: US-ASCII
+      string: ''
     headers: {}
   response:
     status:
@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Thu, 15 Aug 2013 13:55:58 GMT
+      - Fri, 23 Aug 2013 11:40:45 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -47,5 +47,5 @@ http_interactions:
         \   {\r\n      \"Id\": 6,\r\n      \"Name\": \"User\",\r\n      \"IsExtendable\":
         false,\r\n      \"IsSearchable\": false\r\n    }\r\n  ]\r\n}"
     http_version: 
-  recorded_at: Thu, 15 Aug 2013 13:55:58 GMT
+  recorded_at: Fri, 23 Aug 2013 11:40:42 GMT
 recorded_with: VCR 2.5.0

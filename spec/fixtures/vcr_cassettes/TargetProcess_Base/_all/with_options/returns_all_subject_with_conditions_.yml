@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/?format=json&skip=1&take=1
     body:
-      encoding: UTF-8
-      string: take=1&skip=1&format=json
+      encoding: US-ASCII
+      string: ''
     headers: {}
   response:
     status:
@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 15:59:37 GMT
+      - Fri, 23 Aug 2013 11:40:57 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '63'
+      - '87'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -46,7 +46,7 @@ http_interactions:
         \     \"Description\": null,\r\n      \"StartDate\": null,\r\n      \"EndDate\":
         null,\r\n      \"CreateDate\": \"\\/Date(1376476665000-0500)\\/\",\r\n      \"ModifyDate\":
         \"\\/Date(1376476665000-0500)\\/\",\r\n      \"LastCommentDate\": null,\r\n
-        \     \"Tags\": \"\",\r\n      \"NumericPriority\": 26.0,\r\n      \"IsActive\":
+        \     \"Tags\": \"\",\r\n      \"NumericPriority\": 25.0,\r\n      \"IsActive\":
         true,\r\n      \"IsProduct\": false,\r\n      \"Abbreviation\": \"FB\",\r\n
         \     \"MailReplyAddress\": null,\r\n      \"Color\": null,\r\n      \"EntityType\":
         {\r\n        \"Id\": 1,\r\n        \"Name\": \"Project\"\r\n      },\r\n      \"Owner\":
@@ -56,5 +56,5 @@ http_interactions:
         3,\r\n        \"Name\": \"Scrum\"\r\n      },\r\n      \"Company\": null,\r\n
         \     \"CustomFields\": []\r\n    }\r\n  ]\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 15:59:36 GMT
+  recorded_at: Fri, 23 Aug 2013 11:40:53 GMT
 recorded_with: VCR 2.5.0

@@ -3,7 +3,7 @@ require 'target_process/configuration'
 require 'target_process/api_error'
 require 'target_process/api_client'
 require 'target_process/base'
-Dir["./lib/target_process/entities/*.rb"].each {|file| require file }
+Dir["./lib/target_process/entities/*.rb"].each { |file| require file }
 
 module TargetProcess
   class ConfigurationError < StandardError; end

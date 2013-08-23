@@ -1,13 +1,13 @@
 require 'rspec/autorun'
+require 'target_process'
+require 'vcr'
+require 'securerandom'
 
 if ENV['COVERAGE']
   require 'simplecov'
   require 'simplecov-gem-adapter'
   SimpleCov.start 'gem'
 end
-
-require 'target_process'
-require 'vcr'
 
 unless ENV['TRAVIS']
   VCR.configure do |c|

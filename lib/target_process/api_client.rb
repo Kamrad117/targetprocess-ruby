@@ -7,8 +7,7 @@ module TargetProcess
 
     def get(path, options = {})
       options.merge!(format: 'json')
-      options = { body: options }
-      response = perform(:get, path, options)
+      response = request(:get, path, query: options)
       normalize_response(response.parsed_response)
     end
 
@@ -16,29 +15,25 @@ module TargetProcess
       content = prepare_data(attr_hash).to_json
       options = { body: content,
                   headers: { 'Content-Type' => 'application/json' } }
-      response = perform(:post, path, options)
+      response = request(:post, path, options)
       normalize_response(response.parsed_response)
     end
 
     def delete(path)
-      perform(:delete, path).response
+      request(:delete, path).response
     end
 
     private
 
-    def perform(type, path, options = {})
-      auth = { username: TargetProcess.configuration.username,
-               password: TargetProcess.configuration.password }
-      options.merge!(basic_auth: auth)
-      check_for_api_errors HTTParty.send(type, generate_url(path), options)
+    def request(type, path, options = {})
+      options.merge!(basic_auth)
+      response = HTTParty.send(type, generate_url(path), options)
+      check_for_api_errors(response)
+      response
     end
 
     def check_for_api_errors(response)
-      if response['Error']
-        raise APIError.parse(response)
-      else
-        response
-      end
+      raise APIError.parse(response) unless response.success?
     end
 
     def generate_url(path)
@@ -72,6 +67,11 @@ module TargetProcess
     def prepare_data(hash)
       hash = Hash[hash.map { |k, v| [k.to_s.camelize.to_sym, v] }]
       hash.each { |k, v| hash[k] = json_date(v) if v.is_a?(::Time) }
+    end
+
+    def basic_auth
+      { basic_auth: { username: TargetProcess.configuration.username,
+                      password: TargetProcess.configuration.password } }
     end
   end
 end

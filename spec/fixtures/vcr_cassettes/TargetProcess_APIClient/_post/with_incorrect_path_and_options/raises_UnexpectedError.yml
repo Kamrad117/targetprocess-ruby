@@ -17,7 +17,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Thu, 15 Aug 2013 13:56:01 GMT
+      - Fri, 23 Aug 2013 11:40:36 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
@@ -54,5 +54,5 @@ http_interactions:
         following URL and make sure that it is spelled correctly.\r\n            <br><br>\r\n\r\n
         \           <b> Requested URL: </b>/api/v1/foo/<br><br>\r\n\r\n    </body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 15 Aug 2013 13:56:01 GMT
+  recorded_at: Fri, 23 Aug 2013 11:40:45 GMT
 recorded_with: VCR 2.5.0
