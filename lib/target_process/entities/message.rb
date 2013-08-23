@@ -1,6 +1,5 @@
 module TargetProcess
-  class Message
-    include Base
+  class Message < Base
     has_many :generals
     has_many :attachments
     belongs_to :from, 'GeneralUser'

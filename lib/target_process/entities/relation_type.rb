@@ -1,6 +1,5 @@
 module TargetProcess
-  class RelationType
-    include Base
+  class RelationType < Base
     has_many :relations
   end
 end

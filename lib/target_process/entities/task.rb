@@ -1,6 +1,5 @@
 module TargetProcess
-  class Task
-    include Base
+  class Task < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

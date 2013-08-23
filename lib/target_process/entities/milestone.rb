@@ -1,6 +1,5 @@
 module TargetProcess
-  class Milestone
-    include Base
+  class Milestone < Base
     has_many :projects
     belongs_to :owner, 'User'
   end

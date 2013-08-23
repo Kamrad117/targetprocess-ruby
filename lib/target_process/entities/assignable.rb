@@ -1,6 +1,5 @@
 module TargetProcess
-  class Assignable
-    include Base
+  class Assignable < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

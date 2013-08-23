@@ -1,6 +1,5 @@
 module TargetProcess
-  class Practice
-    include Base
+  class Practice < Base
     has_many :processes
   end
 end

@@ -1,6 +1,5 @@
 module TargetProcess
-  class Time
-    include Base
+  class Time < Base
     belongs_to :project
     belongs_to :user
     belongs_to :assignable

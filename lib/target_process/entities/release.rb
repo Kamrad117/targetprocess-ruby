@@ -1,6 +1,5 @@
 module TargetProcess
-  class Release
-    include Base
+  class Release < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

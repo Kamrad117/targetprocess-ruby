@@ -1,6 +1,5 @@
 module TargetProcess
-  class Relation
-    include Base
+  class Relation < Base
     belongs_to :master, 'General'
     belongs_to :slave, 'General'
     belongs_to :relation_type

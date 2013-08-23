@@ -1,6 +1,5 @@
 module TargetProcess
-  class Impediment
-    include Base
+  class Impediment < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

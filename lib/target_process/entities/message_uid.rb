@@ -1,5 +1,4 @@
 module TargetProcess
-  class MessageUid
-    include Base
+  class MessageUid < Base
   end
 end

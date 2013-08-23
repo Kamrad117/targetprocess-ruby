@@ -1,6 +1,5 @@
 module TargetProcess
-  class Revision
-    include Base
+  class Revision < Base
     has_many :revision_files
     has_many :assignables
     belongs_to :project

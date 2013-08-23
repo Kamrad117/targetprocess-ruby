@@ -1,5 +1,4 @@
 module TargetProcess
-  class Severity
-    include Base
+  class Severity < Base
   end
 end

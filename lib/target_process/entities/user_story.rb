@@ -1,6 +1,5 @@
 module TargetProcess
-  class UserStory
-    include Base
+  class UserStory < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

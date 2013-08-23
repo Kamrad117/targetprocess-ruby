@@ -1,6 +1,5 @@
 module TargetProcess
-  class Project
-    include Base
+  class Project < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

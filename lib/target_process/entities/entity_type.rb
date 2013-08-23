@@ -1,6 +1,5 @@
 module TargetProcess
-  class EntityType
-    include Base
+  class EntityType < Base
     has_many :entity_states
   end
 end

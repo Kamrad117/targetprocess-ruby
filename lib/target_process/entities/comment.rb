@@ -1,6 +1,5 @@
 module TargetProcess
-  class Comment
-    include Base
+  class Comment < Base
     belongs_to :general
     belongs_to :owner, 'GeneralUser'
   end

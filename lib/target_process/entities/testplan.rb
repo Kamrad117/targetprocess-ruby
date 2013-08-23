@@ -1,6 +1,5 @@
 module TargetProcess
-  class TargetProcess::Testplan
-    include TargetProcess::Base
+  class Testplan < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -13,6 +12,5 @@ module TargetProcess
     belongs_to :owner, 'GeneralUser'
     belongs_to :last_commented_user, 'GeneralUser'
     belongs_to :project
-
   end
 end

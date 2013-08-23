@@ -1,6 +1,5 @@
 module TargetProcess
-  class RevisionFile
-    include Base
+  class RevisionFile < Base
     belongs_to :revision
   end
 end

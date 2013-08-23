@@ -1,6 +1,5 @@
 module TargetProcess
-  class Team
-    include Base
+  class Team < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'
@@ -10,6 +9,11 @@ module TargetProcess
     has_many :team_members
     has_many :team_projects
     has_many :assignables
+    has_many :user_stories
+    has_many :tasks
+    has_many :bugs
+    has_many :requests
+    has_many :features
     has_many :team_iterations
     belongs_to :entity_type
     belongs_to :owner, 'GeneralUser'

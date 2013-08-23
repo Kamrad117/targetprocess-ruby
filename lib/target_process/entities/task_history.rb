@@ -1,6 +1,5 @@
 module TargetProcess
-  class TaskHistory
-    include Base
+  class TaskHistory < Base
     belongs_to :entity_state
     belongs_to :modifier, 'GeneralUser'
     belongs_to :task

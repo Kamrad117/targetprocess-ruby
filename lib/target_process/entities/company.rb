@@ -1,6 +1,5 @@
 module TargetProcess
-  class Company
-    include Base
+  class Company < Base
     has_many :projects
   end
 end

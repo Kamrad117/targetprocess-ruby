@@ -1,6 +1,5 @@
 module TargetProcess
-  class TestCase
-    include Base
+  class TestCase < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

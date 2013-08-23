@@ -1,6 +1,5 @@
 module TargetProcess
-  class EntityState
-    include Base
+  class EntityState < Base
     has_many :next_states, 'EntityState'
     has_many :previous_states, 'EntityState'
     belongs_to :role

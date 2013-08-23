@@ -1,6 +1,5 @@
 module TargetProcess
-  class Iteration
-    include Base
+  class Iteration < Base
     has_many :comments
     has_many :messages
     has_many :tag_objects, 'Tag'

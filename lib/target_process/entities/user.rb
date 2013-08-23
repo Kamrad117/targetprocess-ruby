@@ -1,6 +1,5 @@
 module TargetProcess
-  class User
-    include Base
+  class User < Base
     has_many :assignables
     has_many :comments
     has_many :requests

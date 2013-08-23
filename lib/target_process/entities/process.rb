@@ -1,6 +1,5 @@
 module TargetProcess
-  class Process
-    include Base
+  class Process < Base
     has_many :entity_states
     has_many :projects
     has_many :practices

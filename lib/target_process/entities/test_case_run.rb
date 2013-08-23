@@ -1,6 +1,5 @@
 module TargetProcess
-  class TestCaseRun
-    include Base
+  class TestCaseRun < Base
     has_many :test_cases
     belongs_to :test_plan_run
   end
