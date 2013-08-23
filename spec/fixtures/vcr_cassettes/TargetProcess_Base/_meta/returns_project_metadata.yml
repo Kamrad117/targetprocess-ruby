@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects//meta
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects//meta?format=json
     body:
-      encoding: UTF-8
-      string: format=json
+      encoding: US-ASCII
+      string: ''
     headers: {}
   response:
     status:
@@ -15,11 +15,11 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Mon, 19 Aug 2013 15:59:39 GMT
+      - Fri, 23 Aug 2013 11:03:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '20107'
+      - '21281'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -35,7 +35,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '14'
+      - '17'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -101,6 +101,21 @@ http_interactions:
         false,\r\n          \"Description\": \"Calculated priority of entity\",\r\n
         \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Double/meta\",\r\n
         \         \"IsBoundToParent\": true\r\n        },\r\n        {\r\n          \"Name\":
+        \"IsNow\",\r\n          \"CanSet\": false,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Boolean\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"True if entity start date is in the
+        past and end date is in the future\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Boolean/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
+        \"IsNext\",\r\n          \"CanSet\": false,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Boolean\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"True if entity is not in the past and
+        is not current\",\r\n          \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Boolean/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
+        \"IsPrevious\",\r\n          \"CanSet\": false,\r\n          \"CanGet\": true,\r\n
+        \         \"IsRequired\": false,\r\n          \"Type\": \"Boolean\",\r\n          \"IsTypeComplex\":
+        false,\r\n          \"Description\": \"True if entity is in the past\",\r\n
+        \         \"Uri\": \"http://tpruby.tpondemand.com/api/v1/Boolean/meta\",\r\n
+        \         \"IsBoundToParent\": false\r\n        },\r\n        {\r\n          \"Name\":
         \"IsActive\",\r\n          \"CanSet\": true,\r\n          \"CanGet\": true,\r\n
         \         \"IsRequired\": false,\r\n          \"Type\": \"Boolean\",\r\n          \"IsTypeComplex\":
         false,\r\n          \"Description\": \"Defines whether project is active\",\r\n
@@ -311,5 +326,5 @@ http_interactions:
         {\r\n    \"Body\": \"Result of GET request is ordered by Name field with ascending
         direction.\"\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 19 Aug 2013 15:59:38 GMT
+  recorded_at: Fri, 23 Aug 2013 11:03:41 GMT
 recorded_with: VCR 2.5.0

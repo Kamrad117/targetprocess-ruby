@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/context/
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/context/?acid=2D2F0BA211357509A03167EECB5F3456&format=json
     body:
-      encoding: UTF-8
-      string: acid=2D2F0BA211357509A03167EECB5F3456&format=json
+      encoding: US-ASCII
+      string: ''
     headers: {}
   response:
     status:
@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Thu, 15 Aug 2013 13:56:35 GMT
+      - Fri, 23 Aug 2013 11:07:11 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -35,13 +35,13 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '28'
+      - '25'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
       string: "{\r\n  \"Acid\": \"C8CC8C1F6C593B3A9A33F8F3C376BDF2\",\r\n  \"Edition\":
-        \"Pro\",\r\n  \"Version\": \"2.24.6.24152\",\r\n  \"AppContext\": {\r\n    \"ProjectContext\":
+        \"Pro\",\r\n  \"Version\": \"2.24.7.24233\",\r\n  \"AppContext\": {\r\n    \"ProjectContext\":
         {\r\n      \"No\": true\r\n    },\r\n    \"TeamContext\": {\r\n      \"No\":
         true\r\n    }\r\n  },\r\n  \"Culture\": {\r\n    \"Name\": \"en-US\",\r\n
         \   \"TimePattern\": \"g:i A\",\r\n    \"ShortDateFormat\": \"M/d/yyyy\",\r\n
@@ -84,5 +84,5 @@ http_interactions:
         \   ]\r\n  },\r\n  \"SelectedProjects\": {\r\n    \"Items\": []\r\n  },\r\n
         \ \"SelectedTeams\": {\r\n    \"Items\": []\r\n  }\r\n}"
     http_version: 
-  recorded_at: Thu, 15 Aug 2013 13:56:35 GMT
+  recorded_at: Fri, 23 Aug 2013 11:07:20 GMT
 recorded_with: VCR 2.5.0

@@ -11,7 +11,7 @@ module TargetProcess
     def self.parse(response)
       error = response['Error']
       status = error['Status'] || response['Status'] || 'Undefined'
-      message = raw_message(response.parsed_response)
+      message = raw_message(response)
       type = "#{self}::#{status}".safe_constantize
       constants.include?(status.to_sym) ? type.new(message) : new(message)
     end

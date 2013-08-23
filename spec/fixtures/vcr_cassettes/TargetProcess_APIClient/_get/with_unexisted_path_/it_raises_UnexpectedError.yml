@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/foobars/
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/foobars/?format=json
     body:
-      encoding: UTF-8
-      string: format=json
+      encoding: US-ASCII
+      string: ''
     headers: {}
   response:
     status:
@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Thu, 15 Aug 2013 13:55:58 GMT
+      - Fri, 23 Aug 2013 11:01:08 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
@@ -52,5 +52,5 @@ http_interactions:
         following URL and make sure that it is spelled correctly.\r\n            <br><br>\r\n\r\n
         \           <b> Requested URL: </b>/api/v1/foobars/<br><br>\r\n\r\n    </body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 15 Aug 2013 13:55:58 GMT
+  recorded_at: Fri, 23 Aug 2013 11:01:05 GMT
 recorded_with: VCR 2.5.0
