@@ -5,7 +5,7 @@ http_interactions:
     uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/
     body:
       encoding: UTF-8
-      string: '{"Name":"Project9042277860"}'
+      string: '{"Name":"Project7e134c1f-b0ec-4d6b-8531-235d8fb7fdca"}'
     headers:
       Content-Type:
       - application/json
@@ -17,11 +17,11 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Fri, 23 Aug 2013 11:03:36 GMT
+      - Fri, 23 Aug 2013 11:40:50 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '737'
+      - '763'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -37,27 +37,28 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '505'
+      - '504'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
-      string: "{\r\n  \"Id\": 6849,\r\n  \"Name\": \"Project9042277860\",\r\n  \"Description\":
-        null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n  \"CreateDate\":
-        \"\\/Date(1377255823000-0500)\\/\",\r\n  \"ModifyDate\": \"\\/Date(1377255823000-0500)\\/\",\r\n
-        \ \"LastCommentDate\": null,\r\n  \"Tags\": \"\",\r\n  \"NumericPriority\":
-        113.0,\r\n  \"IsActive\": true,\r\n  \"IsProduct\": false,\r\n  \"Abbreviation\":
-        \"PRO\",\r\n  \"MailReplyAddress\": null,\r\n  \"Color\": null,\r\n  \"EntityType\":
-        {\r\n    \"Id\": 1,\r\n    \"Name\": \"Project\"\r\n  },\r\n  \"Owner\": {\r\n
-        \   \"Id\": 1,\r\n    \"FirstName\": \"Administrator\",\r\n    \"LastName\":
-        \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\": null,\r\n  \"Project\":
-        null,\r\n  \"Program\": null,\r\n  \"Process\": {\r\n    \"Id\": 3,\r\n    \"Name\":
-        \"Scrum\"\r\n  },\r\n  \"Company\": null,\r\n  \"CustomFields\": []\r\n}"
+      string: "{\r\n  \"Id\": 6874,\r\n  \"Name\": \"Project7e134c1f-b0ec-4d6b-8531-235d8fb7fdca\",\r\n
+        \ \"Description\": null,\r\n  \"StartDate\": null,\r\n  \"EndDate\": null,\r\n
+        \ \"CreateDate\": \"\\/Date(1377258058000-0500)\\/\",\r\n  \"ModifyDate\":
+        \"\\/Date(1377258058000-0500)\\/\",\r\n  \"LastCommentDate\": null,\r\n  \"Tags\":
+        \"\",\r\n  \"NumericPriority\": 114.0,\r\n  \"IsActive\": true,\r\n  \"IsProduct\":
+        false,\r\n  \"Abbreviation\": \"PRO\",\r\n  \"MailReplyAddress\": null,\r\n
+        \ \"Color\": null,\r\n  \"EntityType\": {\r\n    \"Id\": 1,\r\n    \"Name\":
+        \"Project\"\r\n  },\r\n  \"Owner\": {\r\n    \"Id\": 1,\r\n    \"FirstName\":
+        \"Administrator\",\r\n    \"LastName\": \"Administrator\"\r\n  },\r\n  \"LastCommentedUser\":
+        null,\r\n  \"Project\": null,\r\n  \"Program\": null,\r\n  \"Process\": {\r\n
+        \   \"Id\": 3,\r\n    \"Name\": \"Scrum\"\r\n  },\r\n  \"Company\": null,\r\n
+        \ \"CustomFields\": []\r\n}"
     http_version: 
-  recorded_at: Fri, 23 Aug 2013 11:03:45 GMT
+  recorded_at: Fri, 23 Aug 2013 11:40:59 GMT
 - request:
     method: delete
-    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/6849/
+    uri: http://admin:admin@tpruby.tpondemand.com/api/v1/Projects/6874/
     body:
       encoding: US-ASCII
       string: ''
@@ -70,7 +71,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Fri, 23 Aug 2013 11:03:48 GMT
+      - Fri, 23 Aug 2013 11:41:03 GMT
       Content-Length:
       - '0'
       Connection:
@@ -88,12 +89,12 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '124'
+      - '115'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 23 Aug 2013 11:03:45 GMT
+  recorded_at: Fri, 23 Aug 2013 11:41:00 GMT
 recorded_with: VCR 2.5.0

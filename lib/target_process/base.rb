@@ -105,11 +105,11 @@ module  TargetProcess
       klass ||= name.to_s.singularize.camelize
       define_method(name) do
         path = entity_path + name.to_s.camelize
-        collection = TargetProcess.client.get(path)[:items].collect do |hash|
-                       entity = "TargetProcess::#{klass}".constantize.new
-                       entity.attributes.merge!(hash)
-                       entity
-                     end
+        TargetProcess.client.get(path)[:items].collect do |hash|
+          entity = "TargetProcess::#{klass}".constantize.new
+          entity.attributes.merge!(hash)
+          entity
+        end
       end
     end
 

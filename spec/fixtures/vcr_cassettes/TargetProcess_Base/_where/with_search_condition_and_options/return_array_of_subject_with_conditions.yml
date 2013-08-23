@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Fri, 23 Aug 2013 11:03:43 GMT
+      - Fri, 23 Aug 2013 11:40:58 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -35,18 +35,18 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '162'
+      - '169'
       X-Ua-Compatible:
       - IE=edge
     body:
       encoding: UTF-8
       string: "{\r\n  \"Next\": \"http://tpruby.tpondemand.com/api/v1/Projects/?where=CreateDate
         lt \\\"2014-10-10\\\"&orderByDesc=id&format=json&take=1&skip=1\",\r\n  \"Items\":
-        [\r\n    {\r\n      \"Id\": 6826,\r\n      \"Name\": \"Pro471072885\",\r\n
+        [\r\n    {\r\n      \"Id\": 6857,\r\n      \"Name\": \"Pro305079333\",\r\n
         \     \"Description\": null,\r\n      \"StartDate\": null,\r\n      \"EndDate\":
-        null,\r\n      \"CreateDate\": \"\\/Date(1377246357000-0500)\\/\",\r\n      \"ModifyDate\":
-        \"\\/Date(1377246357000-0500)\\/\",\r\n      \"LastCommentDate\": null,\r\n
-        \     \"Tags\": \"\",\r\n      \"NumericPriority\": 112.0,\r\n      \"IsActive\":
+        null,\r\n      \"CreateDate\": \"\\/Date(1377255856000-0500)\\/\",\r\n      \"ModifyDate\":
+        \"\\/Date(1377255856000-0500)\\/\",\r\n      \"LastCommentDate\": null,\r\n
+        \     \"Tags\": \"\",\r\n      \"NumericPriority\": 113.0,\r\n      \"IsActive\":
         true,\r\n      \"IsProduct\": false,\r\n      \"Abbreviation\": \"PRO\",\r\n
         \     \"MailReplyAddress\": null,\r\n      \"Color\": null,\r\n      \"EntityType\":
         {\r\n        \"Id\": 1,\r\n        \"Name\": \"Project\"\r\n      },\r\n      \"Owner\":
@@ -56,5 +56,5 @@ http_interactions:
         3,\r\n        \"Name\": \"Scrum\"\r\n      },\r\n      \"Company\": null,\r\n
         \     \"CustomFields\": []\r\n    }\r\n  ]\r\n}"
     http_version: 
-  recorded_at: Fri, 23 Aug 2013 11:03:40 GMT
+  recorded_at: Fri, 23 Aug 2013 11:40:54 GMT
 recorded_with: VCR 2.5.0

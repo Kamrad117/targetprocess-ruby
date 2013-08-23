@@ -7,8 +7,7 @@ module TargetProcess
 
     def get(path, options = {})
       options.merge!(format: 'json')
-      options = { query: options }
-      response = request(:get, path, options)
+      response = request(:get, path, query: options)
       normalize_response(response.parsed_response)
     end
 
@@ -27,9 +26,7 @@ module TargetProcess
     private
 
     def request(type, path, options = {})
-      auth = { basic_auth: { username: TargetProcess.configuration.username,
-                             password: TargetProcess.configuration.password } }
-      options.merge!(auth)
+      options.merge!(basic_auth)
       response = HTTParty.send(type, generate_url(path), options)
       check_for_api_errors(response)
       response
@@ -70,6 +67,11 @@ module TargetProcess
     def prepare_data(hash)
       hash = Hash[hash.map { |k, v| [k.to_s.camelize.to_sym, v] }]
       hash.each { |k, v| hash[k] = json_date(v) if v.is_a?(::Time) }
+    end
+
+    def basic_auth
+      { basic_auth: { username: TargetProcess.configuration.username,
+                      password: TargetProcess.configuration.password } }
     end
   end
 end

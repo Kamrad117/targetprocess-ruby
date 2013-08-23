@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Fri, 23 Aug 2013 11:03:44 GMT
+      - Fri, 23 Aug 2013 11:40:59 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       X-Aspnetmvc-Version:
       - '3.0'
       X-Stopwatch:
-      - '17'
+      - '18'
       X-Ua-Compatible:
       - IE=edge
     body:
@@ -326,5 +326,5 @@ http_interactions:
         {\r\n    \"Body\": \"Result of GET request is ordered by Name field with ascending
         direction.\"\r\n  }\r\n}"
     http_version: 
-  recorded_at: Fri, 23 Aug 2013 11:03:41 GMT
+  recorded_at: Fri, 23 Aug 2013 11:40:55 GMT
 recorded_with: VCR 2.5.0

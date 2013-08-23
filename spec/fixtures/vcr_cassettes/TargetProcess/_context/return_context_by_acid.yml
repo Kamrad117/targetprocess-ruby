@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Fri, 23 Aug 2013 11:07:11 GMT
+      - Fri, 23 Aug 2013 11:44:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -84,5 +84,5 @@ http_interactions:
         \   ]\r\n  },\r\n  \"SelectedProjects\": {\r\n    \"Items\": []\r\n  },\r\n
         \ \"SelectedTeams\": {\r\n    \"Items\": []\r\n  }\r\n}"
     http_version: 
-  recorded_at: Fri, 23 Aug 2013 11:07:20 GMT
+  recorded_at: Fri, 23 Aug 2013 11:44:12 GMT
 recorded_with: VCR 2.5.0

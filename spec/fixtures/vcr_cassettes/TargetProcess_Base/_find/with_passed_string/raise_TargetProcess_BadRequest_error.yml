@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.4.1
       Date:
-      - Fri, 23 Aug 2013 11:03:28 GMT
+      - Fri, 23 Aug 2013 11:40:43 GMT
       Content-Type:
       - text/xml; charset=utf-8
       Content-Length:
@@ -58,5 +58,5 @@ http_interactions:
         controllerContext, String actionName)</StackTrace>\r\n  <Details>{ ServerErrorCodes
         = System.String[] }</Details>\r\n</Error>"
     http_version: 
-  recorded_at: Fri, 23 Aug 2013 11:03:37 GMT
+  recorded_at: Fri, 23 Aug 2013 11:40:52 GMT
 recorded_with: VCR 2.5.0

@@ -30,7 +30,7 @@ describe TargetProcess::Base, vcr: true do
     context 'with passed correct id' do
       it 'returns project' do
         project = TargetProcess::Project.new(
-                  name: "Project#{rand(99999) * rand(99999)}",
+                  name: "Project#{SecureRandom.uuid}",
                   start_date: Time.now).save
         item = subject.find(project.id)
 
@@ -43,7 +43,7 @@ describe TargetProcess::Base, vcr: true do
     context 'with passed correct id and options' do
       it 'returns formatted requested entity' do
         project = TargetProcess::Project.new(
-                  name: "Project#{rand(99999) * rand(99999)}",
+                  name: "Project#{SecureRandom.uuid}",
                   start_date: Time.now).save
         options = { include: '[Tasks]', append: '[Tasks-Count]' }
         item = subject.find(project.id, options)
@@ -133,7 +133,7 @@ describe TargetProcess::Base, vcr: true do
 
   describe '#method_missing' do
     it 'provide getters for attributes values' do
-      unique_name = "Project#{rand(99999) * rand(99999)}"
+      unique_name = "Project#{SecureRandom.uuid}"
       project = TargetProcess::Project.new(name: unique_name).save
 
       project.attributes.keys.each do |key|
@@ -163,7 +163,7 @@ describe TargetProcess::Base, vcr: true do
 
     context 'if set any attribute' do
       it 'add it to changed_attributes' do
-        unique_name = "Project#{rand(99999) * rand(99999)}"
+        unique_name = "Project#{SecureRandom.uuid}"
         project = TargetProcess::Project.new(name: unique_name).save
         new_name = 'new name'
         project.name = new_name
@@ -175,7 +175,7 @@ describe TargetProcess::Base, vcr: true do
 
     context 'if edit attribute with the same old value in attributes' do
       it 'delete attribute from changed_attributes' do
-        unique_name = "Project#{rand(99999) * rand(99999)}"
+        unique_name = "Project#{SecureRandom.uuid}"
         project = TargetProcess::Project.new(name: unique_name).save
         prev_name = project.name
         project.name = 'foobar'
@@ -191,7 +191,7 @@ describe TargetProcess::Base, vcr: true do
   describe '#delete' do
     context 'if project exist on remote host' do
       it 'delete project on remote host and return true' do
-        unique_name = "Project#{rand(99999) * rand(99999)}"
+        unique_name = "Project#{SecureRandom.uuid}"
         project = TargetProcess::Project.new(name: unique_name).save
 
         expect(project.delete).to eq(true)
@@ -205,7 +205,7 @@ describe TargetProcess::Base, vcr: true do
   describe '#save' do
     context 'called on project with required fields' do
       it 'save it on remote host and update local instance attributes' do
-        project = subject.new(name: "Project#{rand(99999) * rand(99999)}").save
+        project = subject.new(name: "Project#{SecureRandom.uuid}").save
         remote_project = subject.find(project.id)
         project.numeric_priority = nil
         remote_project.numeric_priority = nil
@@ -217,8 +217,8 @@ describe TargetProcess::Base, vcr: true do
 
     context 'called on project with updated attributes' do
       it 'updates task on remote host and clean changed attributes' do
-        project = subject.new(name: "Project#{rand(99999) * rand(99999)}").save
-        project.name = "Project_new_name#{rand(99999) * rand(99999)}"
+        project = subject.new(name: "Project#{SecureRandom.uuid}").save
+        project.name = "Project_new_name#{SecureRandom.uuid}"
         project.save
         remote = subject.find(project.id)
         remote.numeric_priority = nil
@@ -231,7 +231,7 @@ describe TargetProcess::Base, vcr: true do
 
     context 'called on up-to-date local project' do
       it 'do nothing with local instance' do
-        project = subject.new(name: "Project#{rand(99999) * rand(99999)}").save
+        project = subject.new(name: "Project#{SecureRandom.uuid}").save
         project.save
         remote = subject.find(project.id)
         project.numeric_priority = nil
@@ -270,7 +270,7 @@ describe TargetProcess::Base, vcr: true do
 
     it 'comapres projects with different attributes' do
       project1 = subject.new(name: 'New project')
-      project2 = subject.new(name: "Project#{rand(99999) * rand(99999)}").save
+      project2 = subject.new(name: "Project#{SecureRandom.uuid}").save
 
       expect(project1).to_not eq(project2)
       expect(project2).to_not eq(project1)
@@ -314,26 +314,25 @@ describe TargetProcess::Base, vcr: true do
 
   describe '#belongs_to' do
     it 'provide getter for referenced items' do
-      p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
-      us = TargetProcess::UserStory.new(name: "story2",
+      p = TargetProcess::Project.all(orderByDesc: 'id', take: 1 ).first
+      us = TargetProcess::UserStory.new(name: 'story2',
                                         project: { id: p.id }
                                         ).save
 
       expect(us.project).to be_an_instance_of(TargetProcess::Project)
       expect(us.project).to eq(p)
       expect(p.user_stories.first).to eq(us)
-      p.delete
       us.delete
     end
 
     it 'provide setters for referenced items' do
-      project_name = "Pro#{rand(999_999_999)}"
-      p = TargetProcess::Project.new(name: project_name).save
-      us = TargetProcess::UserStory.new(name: "story2", project: nil)
+      project_name = "Pro#{SecureRandom.uuid}"
+      p = TargetProcess::Project.all(orderByDesc: 'id', take: 1 ).first
+      us = TargetProcess::UserStory.new(name: 'story2', project: nil)
 
       us.project = p
 
-      expect(us.changed_attributes[:project]).to eq({id: p.id})
+      expect(us.changed_attributes[:project]).to eq({ id: p.id })
       us.save
       expect(us.project).to eq(p)
       expect(p.user_stories).to include(us)
@@ -342,13 +341,13 @@ describe TargetProcess::Base, vcr: true do
 
   describe 'has_many' do
     it 'provides getters for collections with symbol-named class' do
-      p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
-      us = TargetProcess::UserStory.new(name: "story2",
+      p = TargetProcess::Project.new(name: "Pro#{SecureRandom.uuid}").save
+      us = TargetProcess::UserStory.new(name: 'story2',
                                         project: { id: p.id }
                                         ).save
       tasks = []
       5.times do
-        tasks << TargetProcess::Task.new(name: "task",
+        tasks << TargetProcess::Task.new(name: 'task',
                                          user_story: { id: us.id }
                                          ).save
       end
@@ -363,14 +362,14 @@ describe TargetProcess::Base, vcr: true do
     end
 
     it 'provides getters for collections with different class' do
-      p = TargetProcess::Project.new(name: "Pro#{rand(999_999_999)}").save
-      us = TargetProcess::UserStory.new(name: "story2",
+      p = TargetProcess::Project.new(name: "Pro#{SecureRandom.uuid}").save
+      us = TargetProcess::UserStory.new(name: 'story2',
                                         project: { id: p.id },
                                         owner: { id: 1 }
                                         ).save
       TargetProcess::Assignment.new(assignable: { id: us.id },
                                     general_user: { id: 1 },
-                                    role: { id: 1}
+                                    role: { id: 1 }
                                     ).save
       au = us.assigned_user
 
